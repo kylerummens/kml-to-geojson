@@ -1,0 +1,1829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Hillsboro School District 1j - BBH Entities_1634853478720.xlsx - Entity Information.csv</name>
+	<open>1</open>
+	<Schema name="Hillsboro School District 1j - BBH Entities_1634853478720" id="S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+		<SimpleField type="int" name="Hub"><displayName>&lt;b&gt;Hub&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="string" name="Entity_Name"><displayName>&lt;b&gt;Entity Name&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="int" name="Entity_Number"><displayName>&lt;b&gt;Entity Number&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="string" name="Entity_Type"><displayName>&lt;b&gt;Entity Type&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="string" name="Parent_Entity_Name"><displayName>&lt;b&gt;Parent Entity Name&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="string" name="Physical_Address_1"><displayName>&lt;b&gt;Physical Address 1&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="string" name="Physical_City"><displayName>&lt;b&gt;Physical City&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="string" name="Physical_State"><displayName>&lt;b&gt;Physical State&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="int" name="Physical_Zip_Code"><displayName>&lt;b&gt;Physical Zip Code&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="double" name="Latitude"><displayName>&lt;b&gt;Latitude&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="double" name="Longitude"><displayName>&lt;b&gt;Longitude&lt;/b&gt;</displayName>
+</SimpleField>
+	</Schema>
+	<Style id="hlightPointStyle">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>Hub</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Hub]</td></tr>
+  <tr><td><b>Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Name]</td></tr>
+  <tr><td><b>Entity Number</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Number]</td></tr>
+  <tr><td><b>Entity Type</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Type]</td></tr>
+  <tr><td><b>Parent Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Parent_Entity_Name]</td></tr>
+  <tr><td><b>Physical Address 1</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Address_1]</td></tr>
+  <tr><td><b>Physical City</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_City]</td></tr>
+  <tr><td><b>Physical State</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_State]</td></tr>
+  <tr><td><b>Physical Zip Code</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Zip_Code]</td></tr>
+  <tr><td><b>Latitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Latitude]</td></tr>
+  <tr><td><b>Longitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Longitude]</td></tr>
+</table>]]></text>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="hlightPointStyle0">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/polygon.png</href>
+			</Icon>
+		</IconStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>Hub</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Hub]</td></tr>
+  <tr><td><b>Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Name]</td></tr>
+  <tr><td><b>Entity Number</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Number]</td></tr>
+  <tr><td><b>Entity Type</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Type]</td></tr>
+  <tr><td><b>Parent Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Parent_Entity_Name]</td></tr>
+  <tr><td><b>Physical Address 1</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Address_1]</td></tr>
+  <tr><td><b>Physical City</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_City]</td></tr>
+  <tr><td><b>Physical State</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_State]</td></tr>
+  <tr><td><b>Physical Zip Code</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Zip_Code]</td></tr>
+  <tr><td><b>Latitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Latitude]</td></tr>
+  <tr><td><b>Longitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Longitude]</td></tr>
+</table>]]></text>
+		</BalloonStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="normPointStyle">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/polygon.png</href>
+			</Icon>
+		</IconStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>Hub</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Hub]</td></tr>
+  <tr><td><b>Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Name]</td></tr>
+  <tr><td><b>Entity Number</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Number]</td></tr>
+  <tr><td><b>Entity Type</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Type]</td></tr>
+  <tr><td><b>Parent Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Parent_Entity_Name]</td></tr>
+  <tr><td><b>Physical Address 1</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Address_1]</td></tr>
+  <tr><td><b>Physical City</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_City]</td></tr>
+  <tr><td><b>Physical State</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_State]</td></tr>
+  <tr><td><b>Physical Zip Code</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Zip_Code]</td></tr>
+  <tr><td><b>Latitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Latitude]</td></tr>
+  <tr><td><b>Longitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Longitude]</td></tr>
+</table>]]></text>
+		</BalloonStyle>
+	</Style>
+	<Style id="normPointStyle0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>Hub</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Hub]</td></tr>
+  <tr><td><b>Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Name]</td></tr>
+  <tr><td><b>Entity Number</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Number]</td></tr>
+  <tr><td><b>Entity Type</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Entity_Type]</td></tr>
+  <tr><td><b>Parent Entity Name</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Parent_Entity_Name]</td></tr>
+  <tr><td><b>Physical Address 1</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Address_1]</td></tr>
+  <tr><td><b>Physical City</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_City]</td></tr>
+  <tr><td><b>Physical State</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_State]</td></tr>
+  <tr><td><b>Physical Zip Code</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Physical_Zip_Code]</td></tr>
+  <tr><td><b>Latitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Latitude]</td></tr>
+  <tr><td><b>Longitude</b></td><td>$[Hillsboro School District 1j - BBH Entities_1634853478720/Longitude]</td></tr>
+</table>]]></text>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="pointStyleMap">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#normPointStyle</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#hlightPointStyle0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="pointStyleMap0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#normPointStyle0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#hlightPointStyle</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff0055</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffffaa55</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0880fd</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffffaa55</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff0055</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0880fd</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Folder id="layer 0">
+		<name>Hillsboro School District 1j - BBH Entities_1634853478720</name>
+		<open>1</open>
+	</Folder>
+	<Folder>
+		<name>Hub</name>
+		<Placemark>
+			<name>Hillsboro School District 1j</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Entity_Number">144885</SimpleData>
+					<SimpleData name="Entity_Type">School District</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Organization For Educational Technology And Curriculum</SimpleData>
+					<SimpleData name="Physical_Address_1">3083 Ne 49th Place</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5446</SimpleData>
+					<SimpleData name="Longitude">-122.935</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.934571,45.54461900000003,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>SIte</name>
+		<Placemark>
+			<name>Administration Center</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Administration Center</SimpleData>
+					<SimpleData name="Entity_Number">16031976</SimpleData>
+					<SimpleData name="Entity_Type">Non-Instructional Facility (Nif)</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">3083 N.E 49th Place</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5446</SimpleData>
+					<SimpleData name="Longitude">-122.935</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.934571,45.54461900000003,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Atfalati Ridge Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Atfalati Ridge Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">17019426</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">3083 Ne 49th Place</SimpleData>
+					<SimpleData name="Physical_City">North Plains</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97133</SimpleData>
+					<SimpleData name="Latitude">45.5446</SimpleData>
+					<SimpleData name="Longitude">-122.935</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.934571,45.54461900000003,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Brookwood Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Brookwood Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113323</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">3960 Se Cedar St</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5151</SimpleData>
+					<SimpleData name="Longitude">-122.943</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.942585,45.51508400000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Butternut Creek Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Butternut Creek Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113012</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">20395 Sw Florence St</SimpleData>
+					<SimpleData name="Physical_City">Aloha</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97078</SimpleData>
+					<SimpleData name="Latitude">45.4859</SimpleData>
+					<SimpleData name="Longitude">-122.887</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.887157,45.48585600000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Century High School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Century High School</SimpleData>
+					<SimpleData name="Entity_Number">113324</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">2000 Se Century Blvd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5046</SimpleData>
+					<SimpleData name="Longitude">-122.914</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.914456,45.50461000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Eastwood Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Eastwood Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113337</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">2100 Ne Lincoln St</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5251</SimpleData>
+					<SimpleData name="Longitude">-122.96</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.959578,45.52513299999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Evergreen Middle School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Evergreen Middle School</SimpleData>
+					<SimpleData name="Entity_Number">113330</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">456 Ne Evergreen Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5497</SimpleData>
+					<SimpleData name="Longitude">-122.985</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.984997,45.54973599999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Facilities Center</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Facilities Center</SimpleData>
+					<SimpleData name="Entity_Number">16031978</SimpleData>
+					<SimpleData name="Entity_Type">Non-Instructional Facility (Nif)</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">4901 S.E Witch Hazel Road</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5</SimpleData>
+					<SimpleData name="Longitude">-122.933</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.932619,45.49999100000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Farmington View Elem School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Farmington View Elem School</SimpleData>
+					<SimpleData name="Entity_Number">113327</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">8300 Sw Hillsboro Hwy</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.4598</SimpleData>
+					<SimpleData name="Longitude">-122.991</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.990973,45.459795,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Free Orchards Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Free Orchards Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">16042128</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">2499 South Beech St</SimpleData>
+					<SimpleData name="Physical_City">Cornelius</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97113</SimpleData>
+					<SimpleData name="Latitude">45.5176</SimpleData>
+					<SimpleData name="Longitude">-123.042</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-123.042101,45.51761800000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Glencoe High School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Glencoe High School</SimpleData>
+					<SimpleData name="Entity_Number">113329</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">2700 Nw Glencoe Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5427</SimpleData>
+					<SimpleData name="Longitude">-122.996</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.995501,45.542657,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Groner K-8</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Groner K-8</SimpleData>
+					<SimpleData name="Entity_Number">113328</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">23405 Sw Scholls Ferry Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.4186</SimpleData>
+					<SimpleData name="Longitude">-122.92</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.920123,45.41862200000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Hillsboro High School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Hillsboro High School</SimpleData>
+					<SimpleData name="Entity_Number">113326</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">3285 Se Rood Bridge Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.4946</SimpleData>
+					<SimpleData name="Longitude">-122.957</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.956511,45.49459599999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Hillsboro Online Academy At Boscow</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Hillsboro Online Academy At Boscow</SimpleData>
+					<SimpleData name="Entity_Number">17012615</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">452 Ne Third Ave</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5273</SimpleData>
+					<SimpleData name="Longitude">-122.985</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.985464,45.52729900000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Imlay Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Imlay Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">230982</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">5900 Se Lois Street</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5114</SimpleData>
+					<SimpleData name="Longitude">-122.921</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.921209,45.511419,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Indian Hills Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Indian Hills Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113007</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">21260 Sw Rock Rd</SimpleData>
+					<SimpleData name="Physical_City">Aloha</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97003</SimpleData>
+					<SimpleData name="Latitude">45.5063</SimpleData>
+					<SimpleData name="Longitude">-122.896</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.895578,45.50629100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>J.W. Poynter Middle School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">J.W. Poynter Middle School</SimpleData>
+					<SimpleData name="Entity_Number">113336</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1535 Ne Grant St</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5292</SimpleData>
+					<SimpleData name="Longitude">-122.966</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.96624,45.52917099999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Jackson Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Jackson Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113331</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">675 Ne Estate Dr</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5439</SimpleData>
+					<SimpleData name="Longitude">-122.981</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.981105,45.543912,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ladd Acres Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Ladd Acres Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113321</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">2425 Se Cornelius Pass Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5019</SimpleData>
+					<SimpleData name="Longitude">-122.904</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.903708,45.501895,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Lenox Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Lenox Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113594</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">21200 Nw Rock Creek Blvd</SimpleData>
+					<SimpleData name="Physical_City">Portland</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97229</SimpleData>
+					<SimpleData name="Latitude">45.5584</SimpleData>
+					<SimpleData name="Longitude">-122.895</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.894559,45.55838200000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Liberty High School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Liberty High School</SimpleData>
+					<SimpleData name="Entity_Number">230983</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">7445 Ne Wagon Drive</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5617</SimpleData>
+					<SimpleData name="Longitude">-122.906</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.905713,45.56173200000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Lincoln Street Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Lincoln Street Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">16042132</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">801 Ne Lincoln St</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.524</SimpleData>
+					<SimpleData name="Longitude">-122.977</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.97723,45.52401800000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Miller Education Center 6-12 West</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Miller Education Center 6-12 West</SimpleData>
+					<SimpleData name="Entity_Number">113314</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">440 Se Oak St</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5181</SimpleData>
+					<SimpleData name="Longitude">-122.984</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.9837856,45.5181295,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Miller Education Center 9-12east</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Miller Education Center 9-12east</SimpleData>
+					<SimpleData name="Entity_Number">113317</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">215 Se 6th Ave</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5211</SimpleData>
+					<SimpleData name="Longitude">-122.981</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.9814753,45.52107960000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Minter Bridge Elem School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Minter Bridge Elem School</SimpleData>
+					<SimpleData name="Entity_Number">113318</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1750 Se Jacquelin Dr</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.4967</SimpleData>
+					<SimpleData name="Longitude">-122.964</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.964116,45.49665899999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Mooberry Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Mooberry Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113333</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1230 Ne 10th Ave</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5339</SimpleData>
+					<SimpleData name="Longitude">-122.972</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.9722,45.53385900000003,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>New Site #2</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">New Site #2</SimpleData>
+					<SimpleData name="Entity_Number">17019439</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">3083 Ne 49th Place</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5446</SimpleData>
+					<SimpleData name="Longitude">-122.935</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.934571,45.54461900000003,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>North Plains Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">North Plains Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113365</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">32030 Nw North Ave</SimpleData>
+					<SimpleData name="Physical_City">North Plains</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97133</SimpleData>
+					<SimpleData name="Latitude">45.6023</SimpleData>
+					<SimpleData name="Longitude">-123.008</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-123.007892,45.60229300000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Orenco Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Orenco Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">223760</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">7050 Ne Birch Street</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5278</SimpleData>
+					<SimpleData name="Longitude">-122.909</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.908762,45.52781099999997,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Paul L. Patterson Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Paul L. Patterson Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">223761</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">261 Northeast Lenox Street</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5459</SimpleData>
+					<SimpleData name="Longitude">-122.991</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.9911,45.54588200000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Quatama Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Quatama Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">16042133</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">6905 Ne Campus Way</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5324</SimpleData>
+					<SimpleData name="Longitude">-122.908</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.908375,45.53243499999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>R.A. Brown Middle School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">R.A. Brown Middle School</SimpleData>
+					<SimpleData name="Entity_Number">113320</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1505 Se Cornelius Pass Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5108</SimpleData>
+					<SimpleData name="Longitude">-122.904</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.90426,45.51080000000003,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Reedville Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Reedville Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113009</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">2695 Sw 209th Ave</SimpleData>
+					<SimpleData name="Physical_City">Aloha</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97003</SimpleData>
+					<SimpleData name="Latitude">45.5</SimpleData>
+					<SimpleData name="Longitude">-122.893</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.893109,45.49996999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Rosedale Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Rosedale Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">16047132</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">3901 Se 67th Avenue</SimpleData>
+					<SimpleData name="Physical_City">Beaverton</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97078</SimpleData>
+					<SimpleData name="Latitude">45.4927</SimpleData>
+					<SimpleData name="Longitude">-122.915</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.914586,45.49268799999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>South Meadows Middle School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">South Meadows Middle School</SimpleData>
+					<SimpleData name="Entity_Number">16047131</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">4690 Se Davis Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.493</SimpleData>
+					<SimpleData name="Longitude">-122.933</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.93298,45.493016,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Tobias Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Tobias Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113008</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1065 Sw 206th Ave</SimpleData>
+					<SimpleData name="Physical_City">Aloha</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97003</SimpleData>
+					<SimpleData name="Latitude">45.512</SimpleData>
+					<SimpleData name="Longitude">-122.89</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.890282,45.51200800000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Transportation &amp; Support Services</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Transportation &amp; Support Services</SimpleData>
+					<SimpleData name="Entity_Number">17029565</SimpleData>
+					<SimpleData name="Entity_Type">Non-Instructional Facility (Nif)</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">7705 Ne Jacobson Street</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.551</SimpleData>
+					<SimpleData name="Longitude">-122.942</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.942272,45.550997,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Transportation Center</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Transportation Center</SimpleData>
+					<SimpleData name="Entity_Number">16031977</SimpleData>
+					<SimpleData name="Entity_Type">Non-Instructional Facility (Nif)</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1220 S.W Walnut Street</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.517</SimpleData>
+					<SimpleData name="Longitude">-123.003</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-123.002968,45.51695399999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>W.L. Henry Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">W.L. Henry Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113322</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">1060 Se 24th Ave</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.5119</SimpleData>
+					<SimpleData name="Longitude">-122.956</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.955999,45.51191199999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>W.V. Mckinney Elem School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">W.V. Mckinney Elem School</SimpleData>
+					<SimpleData name="Entity_Number">113332</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">535 Nw Darnielle St</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5312</SimpleData>
+					<SimpleData name="Longitude">-122.995</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.994975,45.53123000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>West Union Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">West Union Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113341</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">23870 Nw West Union Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97124</SimpleData>
+					<SimpleData name="Latitude">45.5771</SimpleData>
+					<SimpleData name="Longitude">-122.924</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.923903,45.577077,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Witch Hazel Elementary School</name>
+			<styleUrl>#pointStyleMap0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Hillsboro_School_District_1j___BBH_Entities_1634853478720_ISISSSSSIDD">
+					<SimpleData name="Hub">0</SimpleData>
+					<SimpleData name="Entity_Name">Witch Hazel Elementary School</SimpleData>
+					<SimpleData name="Entity_Number">113325</SimpleData>
+					<SimpleData name="Entity_Type">School</SimpleData>
+					<SimpleData name="Parent_Entity_Name">Hillsboro School District 1j</SimpleData>
+					<SimpleData name="Physical_Address_1">4950 Se Davis Rd</SimpleData>
+					<SimpleData name="Physical_City">Hillsboro</SimpleData>
+					<SimpleData name="Physical_State">OR</SimpleData>
+					<SimpleData name="Physical_Zip_Code">97123</SimpleData>
+					<SimpleData name="Latitude">45.4931</SimpleData>
+					<SimpleData name="Longitude">-122.933</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.93302,45.49312700000003,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Construction</name>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-123.041286342767,45.51771147928874,0 -123.0410640925806,45.51803270410261,0 -123.0398733937044,45.51795319110195,0 -123.0397911089221,45.51986679204192,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9638504005323,45.49704576647017,0 -122.9651264213845,45.49746569505697,0 -122.9655831058869,45.49689001847649,0 -122.9644672933449,45.49651476770347,0 -122.9653575226148,45.495259152169,0 -122.958992852154,45.49256641088531,0 -122.958374741456,45.49278820699342,0 -122.9580433943676,45.49285057221608,0 -122.9568519185645,45.49213830576787,0 -122.9544863873859,45.49365406598218,0 -122.9556381463503,45.49455642924577,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9545250866337,45.49368880901667,0 -122.9527533243646,45.49367160270499,0 -122.9534008974573,45.49568101163409,0 -122.9534553614807,45.49572217411924,0 -122.9535359194028,45.49576352015841,0 -122.9535900831926,45.49579464079368,0 -122.9536444179399,45.49582585954848,0 -122.9536867954631,45.49586762488724,0 -122.9537432780631,45.49592008095645,0 -122.95378422347,45.49594114892657,0 -122.9538392694225,45.49597283167856,0 -122.9539075812596,45.49600462093125,0 -122.9540044180734,45.49605782076708,0 -122.9540743670539,45.49610058127358,0 -122.9541182510848,45.49614351282397,0 -122.9541491131627,45.496186622172,0 -122.9542054247053,45.49621909009479,0 -122.9542486650749,45.49625165672003,0 -122.9543065357956,45.49629524226743,0 -122.9543621557704,45.49631711733922,0 -122.9544178957996,45.49633903953327,0 -122.9544458109592,45.49635001837566,0 -122.9519579986218,45.49821651010726,0 -122.9450917427437,45.49713877585124,0 -122.9446542607623,45.49775407943093,0 -122.9380489571918,45.49978598864461,0 -122.9324427377893,45.49956118784456,0 -122.9324692512167,45.49979144076814,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9324426541004,45.49956776688998,0 -122.9309336190984,45.49962605863985,0 -122.9308319522241,45.49730815459165,0 -122.930543695222,45.49594749037821,0 -122.9306893911253,45.49410024650919,0 -122.9325707944244,45.49401944434531,0 -122.9325659702196,45.49374469671345,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9308165070858,45.49418592308352,0 -122.9192432278916,45.494094185735,0 -122.919282502135,45.4927641451311,0 -122.9186467301007,45.4928268866321,0 -122.9184464441095,45.4931460753319,0 -122.916759768795,45.49342187389555,0 -122.9166745839555,45.49342182860796,0 -122.9165643562518,45.49343819992691,0 -122.9164578193695,45.49343814316753,0 -122.9163512826468,45.49343808635462,0 -122.9162447460812,45.49343802948816,0 -122.9161595169405,45.49343798395643,0 -122.9160782944434,45.49342151063509,0 -122.915983974499,45.49337227455095,0 -122.9158646198785,45.49333950634998,0 -122.9158091690734,45.49330684111073,0 -122.9156860580182,45.49329048313249,0 -122.9155842716507,45.49327415362571,0 -122.9154868855656,45.49324160252152,0 -122.9153685517965,45.49320910831523,0 -122.9152627972733,45.49320905158153,0 -122.9124787738772,45.49305279832414,0 -122.9125054681878,45.49244814578945,0 -122.9130030733096,45.49234775469536,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9125527269403,45.49300301164045,0 -122.9117332422648,45.49305936873519,0 -122.9116279822132,45.49305931562962,0 -122.9103840752358,45.49272253258312,0 -122.9103386724216,45.49268947311747,0 -122.9103235697166,45.49267847637942,0 -122.9102609826915,45.49254746285166,0 -122.9102310767986,45.49252577553919,0 -122.9101719375981,45.49250411847606,0 -122.9100984939508,45.49249328467415,0 -122.9100249587178,45.49247168721138,0 -122.9098931366339,45.49245010497741,0 -122.9097761423662,45.49241785539458,0 -122.9096303444285,45.49239637668279,0 -122.9095575581614,45.49238565394922,0 -122.9094849576583,45.49236427816351,0 -122.9094269004155,45.492353595633,0 -122.9093543683977,45.49234291670726,0 -122.909195526199,45.49230037670948,0 -122.9090801247598,45.49227915364892,0 -122.9090080304353,45.49226855097888,0 -122.9089364004144,45.49224741493981,0 -122.9088644901854,45.4922368446995,0 -122.9088071061012,45.4922262927095,0 -122.9087353353639,45.4922157440055,0 -122.9086497357871,45.49219470828483,0 -122.9085925783049,45.49218419909327,0 -122.9085210633603,45.49217369340045,0 -122.9084640296302,45.49216320557931,0 -122.9083652088604,45.49213184276887,0 -122.9082652331192,45.49212137565511,0 -122.9082084744294,45.49211094096993,0 -122.9081230444571,45.49210050235228,0 -122.906992180372,45.49383546843809,0 -122.9056176570793,45.49455405994824,0 -122.9037901850106,45.49335761963265,0 -122.9012351263848,45.49291154127921,0 -122.8999662282392,45.49291083000794,0 -122.8999979020648,45.49299089028546,0 -122.9000504442525,45.49309147218647,0 -122.9000023681304,45.49362343548452,0 -122.900034748327,45.4937066828933,0 -122.9000721196013,45.49376937268596,0 -122.900130824247,45.49385329522052,0 -122.9002206741953,45.49391651284385,0 -122.9002847026146,45.49397993112943,0 -122.9003966016161,45.49406484069309,0 -122.9004255799501,45.49417145984535,0 -122.9004547241884,45.49427868949978,0 -122.9005151171117,45.49436493727801,0 -122.9005368619806,45.49438656488963,0 -122.9022815099099,45.49534109250477,0 -122.9025871149157,45.49653674744734,0 -122.9022638498457,45.49735036122704,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.8949799756463,45.50691371404039,0 -122.8941563712746,45.5069985344321,0 -122.8942277775705,45.5075834465992,0 -122.8995361970268,45.50760803294806,0 -122.8998459849024,45.5074871058596,0 -122.8998882849401,45.50746998057757,0 -122.899920371649,45.50746143927552,0 -122.8999835613736,45.50743584947361,0 -122.9000264738173,45.50742735257704,0 -122.9000802809675,45.50741887221618,0 -122.9001230940895,45.50741039383855,0 -122.9001758092628,45.50739344307175,0 -122.9002294183502,45.50738499946279,0 -122.9002720574748,45.50737655786472,0 -122.9002928382122,45.50736811104446,0 -122.9003353966573,45.50735968775452,0 -122.9003996972769,45.50735128792949,0 -122.900461663235,45.50732605703487,0 -122.9004942929757,45.50732607847771,0 -122.9005680508714,45.50730932476958,0 -122.900652502713,45.50729261429225,0 -122.9007042478099,45.50727591859626,0 -122.9007571675723,45.50726760198183,0 -122.9008113455077,45.50726763742442,0 -122.9008425195323,45.50725931549775,0 -122.9009074985018,45.50725935796405,0 -122.9009508177566,45.50725938626378,0 -122.9010049672104,45.50725942162619,0 -122.9010482868924,45.50725944990619,0 -122.9011039098429,45.50726782857689,0 -122.9011689248803,45.50726787100074,0 -122.9012354854379,45.5072762657774,0 -122.9012571687792,45.50727627991989,0 -122.9013238134084,45.50728468379106,0 -122.9013563564734,45.50728470500951,0 -122.9014230910424,45.50729311799293,0 -122.9014898983326,45.50730154009517,0 -122.9015333365087,45.50730156840206,0 -122.9015876343837,45.50730160377336,0 -122.9016328362668,45.50731002093734,0 -122.9016762983406,45.50731004924069,0 -122.9017197605256,45.50731007753525,0 -122.9017650592561,45.50731850381213,0 -122.9018194167399,45.50731853918833,0 -122.9018647943583,45.50732697463542,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.8901831286063,45.51198157273353,0 -122.8903836001075,45.51172139537068,0 -122.8920321844426,45.51164964430745,0 -122.8921283855986,45.51130293402034,0 -122.8921539779697,45.51127686614144,0 -122.8922036654214,45.51123360708045,0 -122.8922518646384,45.51119916891617,0 -122.8923034604289,45.51113922497915,0 -122.8923749592908,45.51108821108561,0 -122.8923998356895,45.51106281572789,0 -122.8924246347237,45.51103749931772,0 -122.8924750996057,45.51097872770028,0 -122.8925124408702,45.51093700846425,0 -122.8925379350738,45.51090378448125,0 -122.8925875802722,45.51084597372295,0 -122.8926012141965,45.51082131910796,0 -122.8930451482894,45.51049197846745,0 -122.8931710341262,45.51013796871531,0 -122.8959650334968,45.51010231611259,0 -122.8964596106915,45.5101101359064,0 -122.8964980737447,45.51009518478025,0 -122.8965465221404,45.5100802695276,0 -122.8966039493243,45.51005794104793,0 -122.8966511782691,45.51003567112455,0 -122.8966992899099,45.51002087140072,0 -122.8967552258864,45.50999133183081,0 -122.896800963069,45.50996189997609,0 -122.896827673735,45.50993989575566,0 -122.8968543072644,45.50991795520985,0 -122.8968974187933,45.50987425755675,0 -122.8969315052373,45.50983803398913,0 -122.8969369161025,45.50980916591434,0 -122.8977368872341,45.5094353855372,0 -122.9001884677823,45.50947790475551,0 -122.9003839561112,45.50972690037299,0 -122.9004637118608,45.50977953381456,0 -122.9005135719957,45.50982181664583,0 -122.900531455602,45.50984301553488,0 -122.9006138800063,45.50990688080915,0 -122.9006643304249,45.50994966396623,0 -122.9007293178406,45.50999262538638,0 -122.9008232945155,45.51003577526695,0 -122.900882780365,45.51004661290469,0 -122.9009423252154,45.51005746133514,0 -122.9010307045701,45.51006833924342,0 -122.9011213140324,45.51009007090934,0 -122.9012243233934,45.51010099056406,0 -122.9012819604476,45.5101010282087,0 -122.9013251883406,45.51010105643088,0 -122.9013684163218,45.51010108464339,0 -122.9014692819546,45.51010115043488,0 -122.9015125097262,45.51010117861477,0 -122.9015798128778,45.51007952832913,0 -122.9016229985921,45.51007955643635,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9934818036039,45.5425557988507,0 -122.9955987667796,45.54287982011149,0 -122.9957075751196,45.54449531883133,0 -122.9949480893389,45.54454393215703,0 -122.9948992566075,45.54454394157999,0 -122.9948529809348,45.54456015476366,0 -122.9948041108247,45.54456016414052,0 -122.994721045931,45.54457640900469,0 -122.9946647433541,45.54460895293209,0 -122.9946193376408,45.54463342750392,0 -122.9945861005241,45.54465795624703,0 -122.9945428316272,45.54469896187809,0 -122.9945094025348,45.54472364302228,0 -122.9944758958044,45.54474838138538,0 -122.9944557895503,45.54478145107699,0 -122.9944221287872,45.54480632446295,0 -122.9944018838495,45.54483957465992,0 -122.9943691770881,45.54487293092934,0 -122.994314802199,45.54493155524343,0 -122.9942942698858,45.54496519725543,0 -122.9942736730693,45.54499894492623,0 -122.9942447956077,45.54506675702736,0 -122.9942125520446,45.54510935956511,0 -122.9941801811863,45.54515213053296,0 -122.9941487206527,45.54520367816577,0 -122.9941150534453,45.54523818177273,0 -122.9940918696031,45.54525547588945,0 -122.9940560186241,45.54527279966676,0 -122.99399581269,45.54529883785726,0 -122.9939461945564,45.54530753616502,0 -122.9939082435767,45.54530754261736,0 -122.9938576425848,45.54530755120415,0 -122.9937817409629,45.54530756404949,0 -122.9936805393901,45.54530758111143,0 -122.9935540377349,45.54530760233422,0 -122.9933769368368,45.54530763185063,0 -122.993212487039,45.54530765905459,0 -122.9930859878627,45.54530767984696,0 -122.9929468395922,45.54530770258418,0 -122.9928203417256,45.54530772313229,0 -122.9927191438975,45.54530773948703,0 -122.9926305961322,45.54530775373636,0 -122.992567347942,45.54530776387954,0 -122.9924918342042,45.54531647248492,0 -122.9924289200515,45.54532518573154,0 -122.9923659559116,45.54533390610622,0 -122.9922776022411,45.54534263738157,0 -122.9922018530267,45.54535137355683,0 -122.9921387232101,45.54536011466481,0 -122.9920755431359,45.54536886247984,0 -122.9919617266107,45.54538637744383,0 -122.9918985483599,45.54540391247845,0 -122.9918352690226,45.54542147530153,0 -122.9917719860052,45.54544786772815,0 -122.9917341247485,45.54548314912373,0 -122.9916834326827,45.54552741102333,0 -122.991658036199,45.5455540528463,0 -122.9916198077308,45.54558967627402,0 -122.9915557780719,45.54561647473944,0 -122.9915301233081,45.54563437370272,0 -122.9915301260726,45.54567025149966,0 -122.9916074417185,45.5457152510262,0 -122.9916721604474,45.54576043537074,0 -122.9917633062499,45.54583311596521,0 -122.9918157077168,45.54587878351015,0 -122.9918420531314,45.54590627455849,0 -122.9918946380498,45.54594303193081,0 -122.9919213178142,45.54597991384569,0 -122.9919611459086,45.54601691539954,0 -122.9919616807078,45.54604475075886,0 -122.9919756786029,45.54609129415926,0 -122.9920414086576,45.54610061704146,0 -122.9920547350596,45.54610995507924,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9916081775462,45.54566194569818,0 -122.9906844056426,45.54581498402798,0 -122.9906668682084,45.54581498583989,0 -122.9889154570957,45.54586034232412,0 -122.9891299640467,45.54709587452296,0 -122.9891818054715,45.54715770224574,0 -122.9892137241067,45.54720441048908,0 -122.9892749131043,45.54725140908532,0 -122.9893467856369,45.54730661346715,0 -122.9894393394514,45.54737020062268,0 -122.9895019186578,45.54741824301888,0 -122.9895431699949,45.54744237781063,0 -122.9895655958057,45.54747467821172,0 -122.9895972517838,45.54749899253694,0 -122.9896517360309,45.5475560284617,0 -122.9896959269826,45.54760525540205,0 -122.9897511600521,45.54766308612615,0 -122.9897843332762,45.54769632715188,0 -122.9898084949899,45.54773808023316,0 -122.9898519773054,45.54777164364619,0 -122.9898956477417,45.54780535219222,0 -122.9899395073226,45.54783920659434,0 -122.9900046950497,45.54788173098396,0 -122.990018654175,45.54791591842617,0 -122.9900346318128,45.54796747962405,0 -122.9900517068585,45.54802806254835,0 -122.9900566854689,45.54807162144273,0 -122.9900616915039,45.54811542014859,0 -122.9900564512375,45.54815946095772,0 -122.990054198108,45.54823043401353,0 -122.9900478927966,45.54826615726436,0 -122.9900331935797,45.54832004114125,0 -122.9900278062819,45.54836522031442,0 -122.9900109596032,45.54840154616722,0 -122.9900044898973,45.54843803510165,0 -122.9899989823338,45.5484838773198,0 -122.9899819467718,45.54852073759839,0 -122.9899773319918,45.5485763408908,0 -122.9899707161425,45.54861362016841,0 -122.9899650528705,45.5486604579224,0 -122.9899680077062,45.54868868892017,0 -122.9891624342696,45.5487075731833,0 -122.9891305581888,45.5487075735609,0 -122.9890722504587,45.54995741946558,0 -122.9841523843251,45.54993547589477,0 -122.9841704734852,45.54874548527852,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9807529051775,45.54412257049306,0 -122.9799099507245,45.54452432775045,0 -122.979672140747,45.54995789083524,0 -122.9841699336946,45.5499048262543,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9796134549575,45.55003230231735,0 -122.966938630009,45.55028305180452,0 -122.9655503642995,45.5501323361019,0 -122.9628773073243,45.550082217309,0 -122.9624207141644,45.55008220345602,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.902400661377,45.50985144322742,0 -122.9018199133041,45.50985668818673,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.966079066477,45.53084301297748,0 -122.9699678894223,45.53251394574456,0 -122.9712067268333,45.53271565014773,0 -122.9712551294547,45.53272493443712,0 -122.9713144056897,45.53272493506646,0 -122.9713628944202,45.53273422957832,0 -122.9714837821986,45.53275284961565,0 -122.9715324448111,45.53276217489757,0 -122.9715930493397,45.53277151062353,0 -122.971678755447,45.53279021261785,0 -122.9717514495343,45.53279957941124,0 -122.9718242240047,45.53280895656202,0 -122.9718732370712,45.53281834387756,0 -122.9719342322687,45.53282774167743,0 -122.9720057989536,45.53282774238885,0 -122.9720669016778,45.53283715059694,0 -122.9721504429559,45.53283715139578,0 -122.9722339847849,45.53283715216482,0 -122.9723310718842,45.53284657114473,0 -122.9724146607263,45.53284657186794,0 -122.9724880066966,45.53285600104051,0 -122.9725955385254,45.53285600191721,0 -122.9726552784732,45.53285600238301,0 -122.9727269669006,45.53285600292196,0 -122.9727848434743,45.53284657471289,0 -122.9728564926738,45.53284657519608,0 -122.9729042589533,45.53284657550606,0 -122.9729281421372,45.5328465756574,0 -122.9729218699618,45.5336663982515,0 -122.9725790456762,45.53378100504822,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9841275795166,45.52248625968032,0 -122.9843635973149,45.52625205347949,0 -122.9862334502083,45.52628510741087,0 -122.9858734581963,45.5279507615922,0 -122.9856683672753,45.52799389268433,0 -122.986013569563,45.52836689829348,0 -122.9896701787321,45.52837160718432,0 -122.989663585716,45.5276275331126,0 -122.9937617456824,45.52777439228395,0 -122.993512998375,45.52991424869948,0 -122.9963174533097,45.52994718254864,0 -122.997027603118,45.53021629590246,0 -122.9965488873243,45.53093502005665,0 -122.9962663910695,45.53100854980586,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-123.0026366257079,45.51726387372653,0 -123.002344182214,45.51773375256614,0 -123.0010249406958,45.51774149872945,0 -123.0010415290607,45.51894805057182,0 -123.0027740320101,45.51915784820629,0 -123.0026744255058,45.51985118344273,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9838503749542,45.5183227622328,0 -122.9843932032902,45.51836746035115,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9814883644509,45.52116178514074,0 -122.9808559150998,45.52106718840373,0 -122.9808236205459,45.52013873226404,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.976397076524,45.52406008881614,0 -122.9763699201024,45.52389967881665,0 -122.9754252738747,45.52386015859241,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9594841979959,45.52452158196178,0 -122.9606370387964,45.52478057557175,0 -122.9613034965985,45.52483700669592,0 -122.9610044534265,45.52803037745552,0 -122.9540374783344,45.52800912594352,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9421984671357,45.51506274335518,0 -122.9416881026406,45.5161451864347,0 -122.9368404200207,45.51609054135282,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9570218688006,45.51270995348906,0 -122.9571244896173,45.51351448003105,0 -122.9582554437283,45.51355805376225,0 -122.9581884922843,45.51467362794565,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9221582914497,45.5118905932801,0 -122.9225341041696,45.51196968303878,0 -122.9226360640865,45.50872622101983,0 -122.916414416795,45.50862538232942,0 -122.9041976118903,45.50880568448549,0 -122.9019397058674,45.50874519009355,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9147712447356,45.50497095704202,0 -122.9166551839525,45.50535774985424,0 -122.916699161129,45.50735571687623,0 -122.9161010455297,45.50849559859058,0 -122.9162215903815,45.5087093745443,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.8863875037641,45.48705056564489,0 -122.8855816691893,45.48669971243547,0 -122.8823841604887,45.48658355700456,0 -122.8815938167818,45.48669879573185,0 -122.8812802399645,45.48988117801267,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9091758834545,45.53186824944188,0 -122.9090010252806,45.53223476950883,0 -122.9124864257405,45.53251209332564,0 -122.9137710665698,45.5317554552775,0 -122.9138621318345,45.53171967738222,0 -122.9139530057905,45.53168397417365,0 -122.9140397053539,45.53161278111131,0 -122.9140829192622,45.53157729609531,0 -122.9141455308493,45.53150654499088,0 -122.9142078818892,45.53143608843628,0 -122.9142720699204,45.53138343995956,0 -122.9143126348696,45.53133095255087,0 -122.9143721756354,45.5312438345704,0 -122.9144335759448,45.53117446550439,0 -122.9144925294879,45.53108815371519,0 -122.9145489639264,45.5309851624624,0 -122.9145863944712,45.53091685333333,0 -122.9146005834589,45.53084882086799,0 -122.9145894512786,45.53076416707851,0 -122.9146013468115,45.53067994622526,0 -122.914640565628,45.53062962243472,0 -122.9146522835417,45.53054608334919,0 -122.9146617052247,45.53044639250788,0 -122.9146527796288,45.53038026523856,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9245876698193,45.57814018545979,0 -122.9213731265347,45.57733687611653,0 -122.926077790511,45.56539137995031,0 -122.9256763282272,45.55650835316877,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9906748233257,45.45914045567355,0 -122.9924238970574,45.46036992665149,0 -122.9929217651859,45.46565567262223,0 -122.9929808741801,45.47810025512942,0 -122.9921402167385,45.48018384575511,0 -122.9849316869219,45.48035756620731,0 -122.9815351793762,45.4858158678771,0 -122.9813753688345,45.4858963496433,0 -122.9810547545761,45.48605781287677,0 -122.9808405790013,45.48617935026823,0 -122.9806784649677,45.48621994201451,0 -122.9804088284323,45.4863419811709,0 -122.9801922793911,45.48642354974572,0 -122.9799752793949,45.48650528777531,0 -122.9796486289945,45.48658719028583,0 -122.9793214280486,45.48671037166453,0 -122.9791027074935,45.48675151158677,0 -122.9788836605501,45.48683393241456,0 -122.9786093277407,45.48691652194063,0 -122.9783896621203,45.48695787635165,0 -122.9781148820158,45.48699927014951,0 -122.9779496405675,45.48704071368776,0 -122.9778398143191,45.48704070630304,0 -122.9774528753133,45.48716530527274,0 -122.9771768825078,45.4872069149711,0 -122.9767341989658,45.4872902718545,0 -122.9702311229385,45.48934496508781,0 -122.9689530259427,45.49539109852648,0 -122.9678232734368,45.49697678847317,0 -122.9649399860572,45.49582575549115,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9205276109224,45.41866982375385,0 -122.9192783632947,45.41879400095278,0 -122.9174777175187,45.42312780633488,0 -122.9209285352785,45.42423240774685,0 -122.9372733291021,45.4295711779114,0 -122.9388020840962,45.43151642761242,0 -122.9389127800076,45.43166167993789,0 -122.9390948180174,45.43180737063373,0 -122.9395316603663,45.43210001288679,0 -122.9397153357946,45.43224693368372,0 -122.9400127140567,45.43254198602333,0 -122.9401781628675,45.43278909814832,0 -122.9404162650799,45.43303740986868,0 -122.9405308781927,45.43318694669964,0 -122.9407082393979,45.43338700297217,0 -122.9408332609123,45.43348733080551,0 -122.9411468588586,45.4337389866218,0 -122.9413988140372,45.43394117363107,0 -122.941733595488,45.43409338648585,0 -122.9420057589974,45.43419512407915,0 -122.9423422151033,45.43434806399617,0 -122.942688449057,45.4344503203798,0 -122.943035348603,45.43455277338349,0 -122.9433829146403,45.43465542224551,0 -122.9435288667132,45.43465548658951,0 -122.9440151386548,45.43480981068952,0 -122.9443644850738,45.43491295151814,0 -122.9447223774003,45.43496467416558,0 -122.9451461691961,45.43506814330583,0 -122.9455782500192,45.43512004661068,0 -122.9459301191032,45.43522378060857,0 -122.946216407866,45.43527576989785,0 -122.9465764073563,45.43532783996378,0 -122.9468564175589,45.43543194371046,0 -122.9475048566615,45.43553640101907,0 -122.9478599594894,45.43564093750426,0 -122.948154555532,45.43564105960484,0 -122.9484430344342,45.43569344888359,0 -122.9487317950316,45.43574588711933,0 -122.9489470795809,45.43579834695857,0 -122.9506749083449,45.44161904095649,0 -122.9477917293056,45.44910575043303,0 -122.9631158711379,45.4526715229133,0 -122.9629915146325,45.46010343011523,0 -122.9711982485103,45.4593094716572,0 -122.9713470028698,45.45930953676661,0 -122.9715329466054,45.45930961803995,0 -122.9717188912662,45.45930969918727,0 -122.9719792153761,45.45930981258181,0 -122.9720164047316,45.45930982876089,0 -122.9771784463621,45.45970815528077,0 -122.9805365177029,45.46082405695377,0 -122.9854788306277,45.46415797626096,0 -122.9892813239397,45.46413822952064,0 -122.9927837454738,45.46510058486754,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-123.0069868887277,45.60193625228085,0 -123.006561474993,45.60246984942518,0 -123.0017859739213,45.60182776768125,0 -123.0023304082074,45.59922426573277,0 -123.0031574261122,45.59517784980655,0 -123.0012612144133,45.59502856536017,0 -122.9949748636377,45.59431898253101,0 -122.9966734979042,45.59085866976012,0 -122.9949931199349,45.59003834837294,0 -122.9948464783739,45.58999365630388,0 -122.9947281829139,45.58997132745712,0 -122.9945541124452,45.58990455121573,0 -122.9943506195003,45.58983797112161,0 -122.9942053317457,45.58979369576675,0 -122.9939777862779,45.58968346061412,0 -122.9938085151134,45.58959568681691,0 -122.9937316389097,45.58948653015062,0 -122.993677249069,45.58944301552732,0 -122.9935739416468,45.58931302994445,0 -122.9934981772919,45.58920532152591,0 -122.9933907077831,45.58911953233219,0 -122.9932276018951,45.58901277621243,0 -122.9930946356845,45.58890657340892,0 -122.9929359647619,45.58877983992588,0 -122.9927986373298,45.58871673928101,0 -122.9610403583387,45.57680446543387,0 -122.9288224887427,45.56552865365348,0 -122.9282242343507,45.56563860750884,0 -122.9281550427665,45.5656570101708,0 -122.928062610594,45.56567542335917,0 -122.9279699331224,45.56567538972904,0 -122.9278078806918,45.56571228119723,0 -122.9277383011236,45.56571225585893,0 -122.9275991009067,45.56573070888113,0 -122.9274829741985,45.56574918933431,0 -122.9273899566275,45.56576769730424,0 -122.9272968429925,45.56578622431909,0 -122.9272036330916,45.56580477046911,0 -122.927086755102,45.56584194590729,0 -122.9269932917228,45.56586054957054,0 -122.9268768464416,45.56586050663844,0 -122.9267604013082,45.56586046365256,0 -122.9266439564727,45.56586042061299,0 -122.9265508006825,45.5658603861426,0 -122.9264110672768,45.56586033437256,0 -122.9263179117894,45.5658602998162,0 -122.9262022330627,45.56584161889577,0 -122.9261091260977,45.56584158429261,0 -122.9260168804641,45.56582293130025,0 -122.9259936157959,45.56582292264305,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Existing</name>
+		<open>1</open>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-123.0396992993798,45.51980689259979,0 -123.0024014327425,45.52000633925507,0 -122.9899251398041,45.52033887041577,0 -122.9840147009111,45.5201612520452,0 -122.984407320161,45.51840353090539,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9840534471234,45.52013147122754,0 -122.9808368781387,45.52016347864922,0 -122.9755498965715,45.52012642134446,0 -122.9755119661182,45.52219089515177,0 -122.98387779893,45.52260255573359,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9755732199816,45.522166796466,0 -122.975309656397,45.52518134055881,0 -122.9710591860237,45.52506588688746,0 -122.9683047129588,45.52902874369583,0 -122.9661385450493,45.53093537333639,0 -122.9567040681293,45.53100413407936,0 -122.9573625955846,45.54382634570794,0 -122.9629365607087,45.54887736276684,0 -122.9629424513302,45.5489861143972,0 -122.9630059530666,45.5492411690831,0 -122.9630637848021,45.5493877403455,0 -122.9630740149331,45.54957182340389,0 -122.9629801863302,45.54968275298813,0 -122.9628880251315,45.5498311918967,0 -122.9626913422938,45.54990567344873,0 -122.9625462408227,45.55001765748276,0 -122.9624509936694,45.55012998248063,0 -122.9623588376966,45.55031796375165,0 -122.962315093124,45.55046905460324,0 -122.9622188779629,45.55058280268753,0 -122.9584371825942,45.55154545487725,0 -122.9487494538448,45.55127471575346,0 -122.9414807257878,45.55143017879742,0 -122.9362297224247,45.55108075319076,0 -122.9260549638081,45.55119624600967,0 -122.9259314301544,45.55681420605822,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.956826665503,45.53082035642655,0 -122.9536353287078,45.5308908233921,0 -122.9539907345905,45.52820614824057,0 -122.954450836474,45.52076888904013,0 -122.9580386593134,45.52092546815166,0 -122.9584063287571,45.51463471724419,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9541824062581,45.52087084737003,0 -122.9496957271036,45.51976493268292,0 -122.9366227384628,45.51980775667562,0 -122.9367758972102,45.51606803239434,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9366366205371,45.51985502736972,0 -122.9200617003651,45.5197961915155,0 -122.9126272808987,45.52049157667686,0 -122.9011547222831,45.51543796008817,0 -122.9010117174194,45.51517488423197,0 -122.900765774144,45.51507001877424,0 -122.9018964651778,45.51393212305685,0 -122.9019971285784,45.51377902989249,0 -122.9020309966597,45.51362641717235,0 -122.9017502647029,45.50945089724268,0 -122.9020860103518,45.49761700911769,0 -122.893701255898,45.49686243054942,0 -122.8930788946517,45.49876340647686,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.8936354446274,45.49654401252819,0 -122.881288705396,45.4950279167588,0 -122.8809019346558,45.48983958284768,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9260410887789,45.55117809447131,0 -122.9268468822929,45.54851323931856,0 -122.9269472299369,45.54837065359377,0 -122.9269986570654,45.5482820870447,0 -122.9270219882113,45.54826442757793,0 -122.927096320273,45.5481588069645,0 -122.9271904582267,45.54807125655481,0 -122.9272380680463,45.54801892312553,0 -122.9272841510712,45.54798412011714,0 -122.9273544693816,45.54791470582217,0 -122.9274499955304,45.54779385271988,0 -122.9275423752109,45.54770802100795,0 -122.9276104560955,45.54765671812016,0 -122.9277234995419,45.54757153287301,0 -122.9278158062325,45.54746982455715,0 -122.9279490688025,45.54738551448916,0 -122.9280594802669,45.5473183490801,0 -122.928103924419,45.54728485730465,0 -122.9282349190182,45.54721806965453,0 -122.9283442916924,45.5471515237778,0 -122.9284313332117,45.54710177674511,0 -122.9284532607059,45.54708522331704,0 -122.928604695329,45.54700269444221,0 -122.9287113417989,45.54696979970176,0 -122.9288177922727,45.54693696525081,0 -122.9289666106605,45.54688782396986,0 -122.9290725834321,45.54685513968495,0 -122.9291993062393,45.5468225198636,0 -122.9293684336706,45.54675744000134,0 -122.9294106189192,45.54674120714698,0 -122.9295578116431,45.54669260202405,0 -122.9296626661876,45.54666027388129,0 -122.9296835149389,45.54666027851667,0 -122.9347778732337,45.54545908782183,0 -122.9348543710614,45.54542895969909,0 -122.9349466920891,45.54536885080464,0 -122.9350450280073,45.54535387036813,0 -122.9351411211573,45.54532393030042,0 -122.9352370460529,45.54529404269202,0 -122.9353305674878,45.54524930003508,0 -122.9354038500032,45.54520467106629,0 -122.9354569726479,45.54516015519908,0 -122.9355275865059,45.54510098165358,0 -122.9364792771798,45.54428358916139,0 -122.9370683815779,45.54222521686313,0 -122.9370618931429,45.54211914330013,0 -122.9370554269224,45.54201343207573,0 -122.9371198142654,45.54188181316051,0 -122.9371477852014,45.54175074796691,0 -122.9372460843536,45.54159421542322,0 -122.9373096313875,45.54146437598283,0 -122.937374640388,45.54136090188189,0 -122.9374394300668,45.54125777744984,0 -122.9374717428823,45.54120634567984,0 -122.9376022675405,45.54102701838617,0 -122.9377019777508,45.54092502266926,0 -122.9378648587646,45.54072204977912,0 -122.9396395798229,45.53878624918977,0 -122.9406752385426,45.5377584452898,0 -122.9407128247172,45.53762332665542,0 -122.9408429065234,45.53745507111576,0 -122.9408826755412,45.537354446725,0 -122.9410146261656,45.53722068069315,0 -122.9410514024845,45.53708734328046,0 -122.9410880573576,45.53695444528227,0 -122.9410720522774,45.53675590930736,0 -122.9410587750741,45.53659120923848,0 -122.9410429144013,45.53639445931648,0 -122.9410271317098,45.53619867390984,0 -122.9410192694613,45.53610114110536,0 -122.9410062084782,45.53593911538117,0 -122.9408923386501,45.53568122873535,0 -122.9408281155075,45.53545695356332,0 -122.9407229165083,45.53529752496496,0 -122.9406692527303,45.53520217730076,0 -122.9377529796755,45.53273183629238,0 -122.9344695119902,45.53348538379975,0 -122.9342009895224,45.53358028876221,0 -122.933998329652,45.53362778840757,0 -122.9336589805301,45.53367530325093,0 -122.9333193530616,45.53372285741334,0 -122.9329779063903,45.53372280056544,0 -122.9325681712056,45.53372273128122,0 -122.9322267257781,45.53372267265543,0 -122.932021858963,45.53372263709209,0 -122.9318169923837,45.53372260123783,0 -122.9313389711578,45.53372251644654,0 -122.931827623693,45.53120636018602,0 -122.9314031886951,45.52998861042813,0 -122.931268577095,45.52985489943739,0 -122.9310698140573,45.5298103730198,0 -122.9259696667922,45.53048049948989,0 -122.9149553141609,45.53043204479843,0 -122.9096327856704,45.52984681923611,0 -122.9092713841326,45.52969989804267,0 -122.9088369558204,45.52950458927844,0 -122.9086107852267,45.5293100101056,0 -122.908390010129,45.52916447722069,0 -122.9079679499861,45.5290675455194,0 -122.9075465910786,45.5289707730029,0 -122.907198753864,45.52892239017132,0 -122.9067138442174,45.52887399032849,0 -122.9065039462737,45.52882574337553,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.9259380803049,45.55120230911267,0 -122.9148760864539,45.55101101464387,0 -122.9145158820089,45.55071976971755,0 -122.9122425012467,45.55074510655593,0 -122.9096008987499,45.5501491173944,0 -122.9095668855433,45.55006943528226,0 -122.9094990802037,45.54993708796432,0 -122.9094315692259,45.54980531471878,0 -122.9093644540129,45.54964794605922,0 -122.9093307916333,45.54962178615976,0 -122.9081925349731,45.54920598547817,0 -122.9074427442058,45.54954255127551,0 -122.9026435112903,45.54876818209622,0 -122.900075817601,45.54858938148398,0 -122.8999542356107,45.54920157446875,0 -122.8991817282341,45.54922692035984,0 -122.8991015228582,45.55086997836394,0 -122.8981446791646,45.55128054557656,0 -122.8967868396986,45.55133497812492,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.8958269674609,45.55170703483784,0 -122.8956257264271,45.55672382932512,0 -122.8932701252618,45.55662153643007,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Untitled Path</name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-122.8933736806254,45.55656349739852,0 -122.867415227929,45.55613470087422,0 -122.8676323874385,45.55789341170162,0 -122.879967521532,45.55982239404214,0 -122.8802711680743,45.5598715481488,0 -122.8806367393142,45.5599207918153,0 -122.8809449103471,45.55992100514818,0 -122.8814923208367,45.5600195039294,0 -122.8821642875937,45.56011827537209,0 -122.8827726901458,45.5602665104635,0 -122.8833209186468,45.56041512961766,0 -122.88423816201,45.560663780831,0 -122.8847864578309,45.56091337768532,0 -122.8849651307565,45.56111374672835,0 -122.8852050742357,45.56136531250593,0 -122.8854479698648,45.56156747956237,0 -122.8856934795527,45.56171966405901,0 -122.8858800545013,45.56177056168278,0 -122.8914809234047,45.56465208130232,0 -122.8939015006221,45.56630026511048,0 -122.8999047199958,45.55868667005821,0 -122.9010047509194,45.55933499813744,0 -122.9011268327008,45.55945431861127,0 -122.9012511753662,45.55960410659597,0 -122.9013337996081,45.5596943359391,0 -122.9028738392326,45.56127210201306,0 -122.9029790366305,45.56135535010419,0 -122.9031561206336,45.56143889490082,0 -122.9032992610516,45.56143898785839,0 -122.903405816952,45.56149481640218,0 -122.9036204513915,45.56152287730063,0 -122.9037996476079,45.56152299339372,0 -122.9040145889156,45.56155108221652,0 -122.904086244912,45.56157910643621,0 -122.9042656225115,45.56157922234654,0 -122.9044091249416,45.56157931497047,0 -122.9046243792246,45.56157945373249,0 -122.9049113860802,45.56157963842401,0 -122.9050907660651,45.56157975366789,0 -122.9052706829183,45.56160787537807,0 -122.9054142598271,45.56160796743207,0 -122.9055578370886,45.56160805939346,0 -122.9057373093038,45.56160817421511,0 -122.9058449928398,45.56160824303859,0 -122.9060244659583,45.56160835762876,0 -122.9062039394928,45.56160847207416,0 -122.9064193085626,45.56160860921771,0 -122.9065999883533,45.56163675884621,0 -122.9067795540412,45.56163687292919,0 -122.9068872939305,45.56163694130974,0 -122.9070668605828,45.56163705516159,0 -122.9072823414358,45.56163719159315,0 -122.9074978231802,45.5616373278167,0 -122.9077133058272,45.56163746383224,0 -122.9078514568935,45.5615535301887,0 -122.9078423191331,45.56141405077067,0 -122.9077636448586,45.56130292414376,0 -122.9077209119593,45.56119226317389,0 -122.9077139055838,45.5610820651242,0 -122.9076714415621,45.56097228261649,0 -122.9075937313317,45.56086291335077,0 -122.9074826069914,45.56078113758136,0 -122.9073733804976,45.56072673323596,0 -122.9072320714704,45.56072664500596,0 -122.9071246449789,45.56069945003287,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Folder>
+			<name>Sub Folder 1</name>
+			<open>1</open>
+			<Placemark>
+				<name>Untitled Placemark GRANDCHILD</name>
+				<LookAt>
+					<longitude>-122.7939588417253</longitude>
+					<latitude>45.49986327834306</latitude>
+					<altitude>0</altitude>
+					<heading>0.1141717445947973</heading>
+					<tilt>44.74458676447407</tilt>
+					<range>55068.46579517091</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-122.7939588417253,45.49986327834306,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Untitled Path GRANDCHILD</name>
+				<styleUrl>#msn_ylw-pushpin2</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-122.8083888422114,45.4253547826541,0 -122.7108708167827,45.46283253586141,0 -122.6947410636932,45.51335178130607,0 -122.698032225733,45.59228588111972,0 -122.7335852122647,45.66875076620455,0 -122.6914575906773,45.70645754062998,0 -122.5729677762655,45.6796316815406,0 -122.5651457201187,45.57486963139714,0 -122.6276777739307,45.54170613216696,0 -122.6260183896037,45.54013935421549,0 -122.6254721159519,45.53809921650612,0 -122.5766752833137,45.47083895621733,0 -122.5769412209998,45.47000015245884,0 -122.6006886352704,45.41374804149862,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Folder>
+				<name>Sub Folder 2</name>
+				<open>1</open>
+				<Placemark>
+					<name>Untitled Placemark GRANDCHILD 2</name>
+					<LookAt>
+						<longitude>-122.7976349290199</longitude>
+						<latitude>45.50002411082062</latitude>
+						<altitude>0</altitude>
+						<heading>0.1114461025237355</heading>
+						<tilt>44.73697866905118</tilt>
+						<range>53860.13354602479</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#m_ylw-pushpin</styleUrl>
+					<Point>
+						<gx:drawOrder>1</gx:drawOrder>
+						<coordinates>-122.893334622674,45.44886944389975,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>Untitled Placemark GRANDCHILD 2</name>
+					<LookAt>
+						<longitude>-122.7976349290199</longitude>
+						<latitude>45.50002411082062</latitude>
+						<altitude>0</altitude>
+						<heading>0.1114461025237355</heading>
+						<tilt>44.73697866905118</tilt>
+						<range>53860.13354602479</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#m_ylw-pushpin</styleUrl>
+					<Point>
+						<gx:drawOrder>1</gx:drawOrder>
+						<coordinates>-122.7847680308866,45.4286077791388,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>Untitled Path GRANDCHILD 2</name>
+					<styleUrl>#msn_ylw-pushpin3</styleUrl>
+					<LineString>
+						<tessellate>1</tessellate>
+						<coordinates>
+							-123.0244987025093,45.41495776927754,0 -123.0235654095257,45.41356012829389,0 -122.9948784667138,45.38977110322524,0 -122.9949056573162,45.39103160061519,0 -122.9944342108639,45.39387246938576,0 -122.9938172767951,45.39697002749256,0 -122.9909823466407,45.42078420564712,0 -122.9621294131611,45.39443824028864,0 -122.9615079035695,45.39506369139054,0 -122.9611978415453,45.39672769430373,0 -122.946260662733,45.41270199723147,0 -122.9436994605257,45.40889062415064,0 -122.9186886840549,45.38245676870655,0 -122.9184549140829,45.38478745423279,0 -122.9186087025154,45.38733569045063,0 -122.9168841699802,45.3902317057195,0 -122.9005954169672,45.40859302112279,0 -122.8997319398344,45.40824980981952,0 -122.8770305876606,45.4006386040002,0 -122.8750021746469,45.40030507983744,0 -122.8737252346087,45.39963718282863,0 -122.8717021920756,45.39930475219435,0 -122.8709105530095,45.39930529742388,0 -122.8536615473904,45.38497877705137,0 -122.8534741663543,45.38307737963605,0 -122.8548150605843,45.38115928382435,0 -122.855481520958,45.3802034926502,0 -122.8568752382766,45.3789317711873,0 -122.8594362063312,45.37796312993342,0 -122.8623305661928,45.37668084786024,0 -122.8656074591101,45.37545879451755,0 -122.8681503783184,45.37454486626432,0 -122.8830900560246,45.36857750890761,0 -122.8844768603947,45.36793678541793,0 -122.8858112720058,45.36699665388576,0 -122.8879369832735,45.36636002340921,0 -122.8904288358008,45.36572327850388,0 -122.892545593469,45.36509551090086,0 -122.9030265541937,45.36049532671372,0 -122.9047767471924,45.36013975663484,0 -122.9068299911392,45.35948893841682,0 -122.9083340168708,45.35954908986591,0 -122.9115366436895,45.35881229307765,0 -122.9126759376311,45.35887592693364,0 -122.92210650867,45.35587613108177,0 -122.9242626428906,45.35564118634709,0 -122.9258988463123,45.35499095090982,0 -122.9279558841676,45.35461592816085,0 -122.9296549049869,45.35425605641398,0 -122.9307166172834,45.35421279479355,0 -122.9466098148353,45.35334284774486,0 -122.9480671163047,45.35334549367123,0 -122.949911484297,45.35337908174738,0 -122.9528227251207,45.3535625154208,0 -122.9547826104073,45.35409871282496,0 -122.9562864849829,45.35433755071531,0 -122.9591923635717,45.35549455563808,0 -122.9624720287435,45.35664817771337,0 -122.9803322663705,45.36186653665122,0 -122.9818610853848,45.36229038655803,0 -122.9820706523851,45.36288787763244,0 -122.9836464510349,45.36336040763715,0 -122.9858009052951,45.36424129284615,0 -122.9875705899776,45.36510284469446,0 -122.9893570743022,45.36579394526303,0 -122.9915232651913,45.36648809891597,0 -122.9933461117347,45.36739541479047,0 -123.0066017625348,45.37131429153879,0 -123.0082337762477,45.37181761570672,0 -123.0123144052801,45.37288359076462,0 -123.0159231761582,45.37383760525339,0 -123.0177696719176,45.37472713950487,0 -123.0206272341806,45.37530510246123,0 -123.0225350269508,45.37624647860137,0 -123.0260207748438,45.37742882532651,0 -123.0276255524987,45.3776971659851,0 -123.0318773032755,45.37887208268658,0 -123.0337849973129,45.37979499920213,0 -123.0368128062157,45.38069136759841,0 -123.0384231973439,45.38095569466972,0 -123.0408668751498,45.38147143656627,0 -123.0436740477204,45.38196770787574,0 -123.0475232703097,45.38270573913486,0 -123.0494368077679,45.38323028188115,0 -123.051133860392,45.38356199043037,0 -123.0561214658542,45.38426740239808,0 -123.0585030972227,45.3843286236923,0 -123.0615616328723,45.38411813270367,0 -123.0614824511775,45.38296248184621,0 -123.0608893785367,45.38151101152426,0 -123.0602989459461,45.3800659793731,0 -123.0595939387622,45.37834037354584,0 -123.0588364602242,45.37657761224798,0 -123.0582192960274,45.37531418453393,0 -123.0575394594944,45.37381444233705,0 -123.0561034959154,45.37076830910757,0 -123.0538119353128,45.36833146867894,0 -123.0517250046424,45.36710999582084,0 -123.0495472328718,45.36648735613735,0 -123.0482710740558,45.36617442771052,0 -123.0439576048774,45.36581653056894,0 -123.0428334113503,45.36581201134249,0 -123.0400980201317,45.36552103486179,0 -123.0370770991455,45.36548730548365,0 -123.0324979238832,45.36539313585544,0 -123.0285386643259,45.36518511869136,0 -123.0266491175713,45.36552935358519,0 -123.0256697038534,45.3662073065905,0 -123.0248478134693,45.36882091712802,0 -123.0255632421931,45.37112714916448,0 -123.0256397154492,45.37301653274272,0 -123.0270820682249,45.37643137064186,0 -123.0287008248359,45.38022864648863,0 -123.030917117659,45.3837029193166,0 -123.0316079877468,45.38531993380271,0 -123.0343600671633,45.38915550810129,0 -123.0368250424685,45.39349669787962,0 -123.0386645182447,45.39685447864353,0 -123.0401286250441,45.39946861462669,0 -123.0411716283258,45.40187226345117,0 -123.0425920017327,45.40327976179985,0 -123.04482351267,45.40430937953512,0 -123.0476783610463,45.40535619762867,0 -123.0497504728678,45.40563002073664,0 -123.0524051816095,45.40549754754395,0 -123.0531907747484,45.40626390747206,0 -123.0528380206781,45.40728878770205,0 -123.0521570736875,45.41016833506765,0 -123.0508904961001,45.41090500339249,0 -123.0491747775488,45.41240401515978,0 -123.0477428205019,45.41359751443967,0 -123.0434359757023,45.41538746687685,0 -123.0401307278369,45.41636243393195,0 -123.0354281008438,45.41780316068675,0 -123.0316073279256,45.41828838069004,0 -123.0285174193163,45.41954958733717,0 -123.0259684288257,45.42031443099371,0 -123.0235614193831,45.4203735044313,0 -123.0194100298451,45.42099458227626,0 -123.0162901239195,45.42118920350876,0 -123.0143378756413,45.42131093594119,0 
+						</coordinates>
+					</LineString>
+				</Placemark>
+			</Folder>
+		</Folder>
+	</Folder>
+</Document>
+</kml>

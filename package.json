@@ -1,0 +1,19 @@
+{
+  "name": "kml-to-geojson",
+  "version": "1.0.0",
+  "description": "Convert a KML content to geojson, preserving style data",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "start": "node lib/index"
+  },
+  "author": "Kyle Rummens",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/xmldom": "^0.1.31",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2"
+  }
+}
