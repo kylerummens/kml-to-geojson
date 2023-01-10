@@ -185,7 +185,6 @@ export class KmlToGeojson {
 
         // Parse current node
         if (node_name === 'Placemark') {
-            console.log(level, node_name);
             const placemark = this.parsePlacemark(node, styles, style_maps, folder_id);
             placemarks.push(placemark);
         }
@@ -193,9 +192,6 @@ export class KmlToGeojson {
             const folder = this.parseFolder(node, folder_id);
             folders.push(folder);
             folder_id = folder.folder_id;
-        }
-        else if (node_name === 'Style') {
-            console.log(level, node_name);
         }
 
 
