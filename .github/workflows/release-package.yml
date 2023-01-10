@@ -12,9 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install modules
       - run: npm ci
-      - name: Build
       - run: npm run build
 
   publish-gpr:
