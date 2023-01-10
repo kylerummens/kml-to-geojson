@@ -25,9 +25,6 @@
     "type": "git",
     "url": "https://github.com/kylerummens/kml-to-geojson.git"
   },
-  "publishConfig": {
-    "@kylerummens:registry": "https://npm.pkg.github.com"
-  },
   "files": [
     "lib/**/*"
   ]
