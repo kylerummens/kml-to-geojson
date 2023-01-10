@@ -1,6 +1,6 @@
 {
   "name": "kml-to-geojson",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Convert KML content to GeoJSON, preserving style and folder data",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
