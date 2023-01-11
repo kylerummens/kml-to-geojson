@@ -5,7 +5,7 @@ const crypto = require('crypto');
 export interface KmlFolder {
     folder_id: string;
     name: string;
-    parent_folder_id: string;
+    parent_folder_id: string | null;
 }
 
 export interface KmlIconStyleProps {
@@ -66,7 +66,7 @@ export class KmlToGeojson {
         return { color, opacity: isNaN(opacity) ? undefined : opacity };
     }
 
-    private readonly parsePlacemark = (node: Element, styles: any[], style_maps: any[], folder_id: string) => {
+    private readonly parsePlacemark = (node: Element, styles: any[], style_maps: any[], folder_id: string | null) => {
         const name_node = this.get1(node, 'name');
         const description_node = this.get1(node, 'description');
         const point_node = this.get1(node, 'Point');
@@ -177,7 +177,7 @@ export class KmlToGeojson {
 
     }
 
-    private readonly parseFolder = (node: Element, parent_folder_id: string): KmlFolder => {
+    private readonly parseFolder = (node: Element, parent_folder_id: string | null): KmlFolder => {
 
         const name_node = this.get1(node, 'name');
 
@@ -190,7 +190,7 @@ export class KmlToGeojson {
 
     private readonly parseNode = (
         node: Element,
-        folder_id: string = 'root',
+        folder_id: string | null = null,
         styles: any[],
         style_maps: any[],
         folders: any[] = [],
@@ -374,7 +374,7 @@ export class KmlToGeojson {
 
         const { styles, style_maps } = this.parseStyles(kml_node);
 
-        this.parseNode(kml_node, 'root', styles, style_maps, folders, placemarks);
+        this.parseNode(kml_node, null, styles, style_maps, folders, placemarks);
 
         const geojson: KmlGeojson<T> = {
             type: 'FeatureCollection',
