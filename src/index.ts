@@ -78,7 +78,7 @@ export class KmlToGeojson {
         const geometry_type = point_node ? 'Point' : linestring_node ? 'LineString' : polygon_node ? 'Polygon' : null;
         if (geometry_type === null) throw new Error(`Placemark doesn't have Point, LineString, or Polygon child.`);
 
-        const getCoordinates = (node: Element, geometry_type: 'Point' | 'LineString' | 'Polygon'): [number, number, number] | [number, number, number][] => {
+        const getCoordinates = (node: Element, geometry_type: 'Point' | 'LineString' | 'Polygon'): [number, number] | [number, number][] => {
             const coordinates_node = this.get1(node, 'coordinates')!;
             const text_content = coordinates_node.textContent!;
 
@@ -86,9 +86,8 @@ export class KmlToGeojson {
                 const split = text_content.split(',');
                 const longitude = parseFloat(split[0]);
                 const latitude = parseFloat(split[1]);
-                const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
 
-                return [longitude, latitude, altitude];
+                return [longitude, latitude];
             }
             else if (geometry_type === 'LineString' || geometry_type === 'Polygon') {
                 const splits = text_content.trim().split(' ');
@@ -97,13 +96,12 @@ export class KmlToGeojson {
                     const split = coordinate.trim().split(',');
                     const longitude = parseFloat(split[0]);
                     const latitude = parseFloat(split[1]);
-                    const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
 
-                    return [longitude, latitude, altitude];
-                }) as [number, number, number][];
+                    return [longitude, latitude];
+                }) as [number, number][];
             }
 
-            return [0, 0, 0]
+            return [0, 0]
         }
 
         const coordinates = getCoordinates((geometry_type === 'Point' ? point_node : geometry_type === 'LineString' ? linestring_node : polygon_node) as Element, geometry_type);
