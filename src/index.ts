@@ -370,8 +370,8 @@ export class KmlToGeojson {
         folder_id: string | null = null,
         styles: any[],
         style_maps: any[],
-        on_folder: (folder: KmlFolder) => any | void | Promise<any> | Promise<void>,
-        on_geometry: (geometry: KmlFeature<any>) => any | void | Promise<any> | Promise<void>,
+        on_folder: (folder: KmlFolder) => (any | void | Promise<any> | Promise<void>),
+        on_geometry: (geometry: KmlFeature<any>) => (any | void | Promise<any> | Promise<void>),
         level = 0
     ) => {
 
@@ -565,8 +565,8 @@ export class KmlToGeojson {
 
     public readonly streamParse = async <T extends GeoJsonProperties = GeoJsonProperties>(
         kml_content: string,
-        on_folder: (folder: KmlFolder) => any | void | Promise<any> | Promise<void>,
-        on_geometry: (geometry: KmlFeature<T>) => any | void | Promise<any> | Promise<void>) => {
+        on_folder: (folder: KmlFolder) => (any | void | Promise<any> | Promise<void>),
+        on_geometry: (geometry: KmlFeature<T>) => (any | void | Promise<any> | Promise<void>)) => {
 
         const dom = new DOMParser().parseFromString(kml_content);
         const kml_node = this.get1(dom as any as Element, 'kml')!;
