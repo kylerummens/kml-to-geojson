@@ -3,3 +3,4 @@ src
 .vscode
 .github
 test-kmls
+src/test.spec.ts

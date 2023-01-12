@@ -6,7 +6,7 @@
           "request": "launch",
           "name": "Debug Application",
           "args": [
-              "${workspaceFolder}/src/index.ts"
+              "${workspaceFolder}/src/test.spec.ts"
           ],
           "runtimeArgs": [
               "--nolazy",

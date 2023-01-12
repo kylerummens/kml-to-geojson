@@ -58,6 +58,15 @@ export class KmlToGeojson {
         return nodes.length ? nodes[0] : null;
     }
 
+    private readonly get = (node: Element, tag_name: string): Element[] => {
+        const elements = [];
+        const res = node.getElementsByTagName(tag_name);
+        for (let i = 0; i < res.length; i++) {
+            elements.push(res[i]);
+        }
+        return elements;
+    }
+
     private readonly kmlColor = (v: any) => {
         let color, opacity: any;
         v = v || '';
@@ -75,14 +84,15 @@ export class KmlToGeojson {
     private readonly parsePlacemark = (node: Element, styles: any[], style_maps: any[], folder_id: string | null) => {
         const name_node = this.get1(node, 'name');
         const description_node = this.get1(node, 'description');
-        const point_node = this.get1(node, 'Point');
-        const linestring_node = this.get1(node, 'LineString');
-        const polygon_node = this.get1(node, 'Polygon');
         const style_url_node = this.get1(node, 'styleUrl');
         const style_id = style_url_node?.textContent;
 
-        const geometry_type = point_node ? 'Point' : linestring_node ? 'LineString' : polygon_node ? 'Polygon' : null;
-        if (geometry_type === null) throw new Error(`Placemark doesn't have Point, LineString, or Polygon child.`);
+
+        const point_nodes = this.get(node, 'Point');
+        const linestring_nodes = this.get(node, 'LineString');
+        const polygon_nodes = this.get(node, 'Polygon');
+
+        const geometries = [];
 
         const getCoordinates = (node: Element, geometry_type: 'Point' | 'LineString' | 'Polygon') => {
             const coordinates_node = this.get1(node, 'coordinates')!;
@@ -122,74 +132,190 @@ export class KmlToGeojson {
             return arr;
         }
 
-        const coordinates = getCoordinates((geometry_type === 'Point' ? point_node : geometry_type === 'LineString' ? linestring_node : polygon_node) as Element, geometry_type);
+        for (const point of point_nodes) {
+            const geometry_type = 'Point';
 
-        const properties: any = {
-            name: name_node?.textContent ?? '',
-            description: description_node?.textContent ?? '',
-            folder_id
-        };
+            const coordinates = getCoordinates(point, geometry_type);
 
-        if (style_id) {
-            const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
-            const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
-            if (style_map) {
+            const properties: any = {
+                name: name_node?.textContent ?? '',
+                description: description_node?.textContent ?? '',
+                folder_id
+            };
 
-                const normal_style = styles.find(_ => _.style_id === style_map.normal);
-                const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
+            if (style_id) {
+                const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
+                const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
+                if (style_map) {
 
-                if (normal_style) {
-                    Object.keys(normal_style).forEach(key => {
+                    const normal_style = styles.find(_ => _.style_id === style_map.normal);
+                    const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
+
+                    if (normal_style) {
+                        Object.keys(normal_style).forEach(key => {
+                            if (key === 'style_id') return;
+                            const value = normal_style[key];
+                            properties[key] = value;
+                        })
+                    }
+                    if (highlight_style) {
+                        Object.keys(highlight_style).forEach(key => {
+                            if (key === 'style_id') return;
+                            const value = highlight_style[key];
+                            if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
+                        })
+                    }
+
+                }
+                else if (style) {
+                    Object.keys(style).forEach(key => {
                         if (key === 'style_id') return;
-                        const value = normal_style[key];
+                        const value = style[key];
                         properties[key] = value;
                     })
                 }
-                if (highlight_style) {
-                    Object.keys(highlight_style).forEach(key => {
-                        if (key === 'style_id') return;
-                        const value = highlight_style[key];
-                        if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
-                    })
-                }
 
-            }
-            else if (style) {
-                Object.keys(style).forEach(key => {
-                    if (key === 'style_id') return;
-                    const value = style[key];
-                    properties[key] = value;
-                })
-            }
-
-            Object.keys(properties).forEach(key => {
-                if (geometry_type === 'Point') {
+                Object.keys(properties).forEach(key => {
                     if (key.startsWith('line-') || key.startsWith('highlight-line-') || key.startsWith('fill-') || key.startsWith('highlight-fill-')) {
                         delete properties[key];
                     }
+                })
+            }
+
+            geometries.push({
+                type: 'Feature',
+                id: crypto.randomUUID(),
+                geometry: {
+                    type: geometry_type,
+                    coordinates
+                },
+                properties
+            });
+        }
+
+        for (const linestring of linestring_nodes) {
+            const geometry_type = 'LineString';
+
+            const coordinates = getCoordinates(linestring, geometry_type);
+
+            const properties: any = {
+                name: name_node?.textContent ?? '',
+                description: description_node?.textContent ?? '',
+                folder_id
+            };
+
+            if (style_id) {
+                const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
+                const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
+                if (style_map) {
+
+                    const normal_style = styles.find(_ => _.style_id === style_map.normal);
+                    const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
+
+                    if (normal_style) {
+                        Object.keys(normal_style).forEach(key => {
+                            if (key === 'style_id') return;
+                            const value = normal_style[key];
+                            properties[key] = value;
+                        })
+                    }
+                    if (highlight_style) {
+                        Object.keys(highlight_style).forEach(key => {
+                            if (key === 'style_id') return;
+                            const value = highlight_style[key];
+                            if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
+                        })
+                    }
+
                 }
-                else if (geometry_type === 'LineString') {
+                else if (style) {
+                    Object.keys(style).forEach(key => {
+                        if (key === 'style_id') return;
+                        const value = style[key];
+                        properties[key] = value;
+                    })
+                }
+
+                Object.keys(properties).forEach(key => {
                     if (key.startsWith('icon-') || key.startsWith('highlight-icon-') || key.startsWith('fill-') || key.startsWith('highlight-fill-')) {
                         delete properties[key];
                     }
+                })
+            }
+
+            geometries.push({
+                type: 'Feature',
+                id: crypto.randomUUID(),
+                geometry: {
+                    type: geometry_type,
+                    coordinates
+                },
+                properties
+            });
+        }
+
+        for (const polygon of polygon_nodes) {
+            const geometry_type = 'Polygon';
+
+            const coordinates = getCoordinates(polygon, geometry_type);
+
+            const properties: any = {
+                name: name_node?.textContent ?? '',
+                description: description_node?.textContent ?? '',
+                folder_id
+            };
+
+            if (style_id) {
+                const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
+                const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
+                if (style_map) {
+
+                    const normal_style = styles.find(_ => _.style_id === style_map.normal);
+                    const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
+
+                    if (normal_style) {
+                        Object.keys(normal_style).forEach(key => {
+                            if (key === 'style_id') return;
+                            const value = normal_style[key];
+                            properties[key] = value;
+                        })
+                    }
+                    if (highlight_style) {
+                        Object.keys(highlight_style).forEach(key => {
+                            if (key === 'style_id') return;
+                            const value = highlight_style[key];
+                            if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
+                        })
+                    }
+
                 }
-                else if (geometry_type === 'Polygon') {
+                else if (style) {
+                    Object.keys(style).forEach(key => {
+                        if (key === 'style_id') return;
+                        const value = style[key];
+                        properties[key] = value;
+                    })
+                }
+
+                Object.keys(properties).forEach(key => {
                     if (key.startsWith('icon-') || key.startsWith('highlight-icon-') || key.startsWith('line-') || key.startsWith('highlight-line-')) {
                         delete properties[key];
                     }
-                }
-            })
+                })
+            }
+
+            geometries.push({
+                type: 'Feature',
+                id: crypto.randomUUID(),
+                geometry: {
+                    type: geometry_type,
+                    coordinates
+                },
+                properties
+            });
         }
 
-        return {
-            type: 'Feature',
-            id: crypto.randomUUID(),
-            geometry: {
-                type: geometry_type,
-                coordinates
-            },
-            properties
-        }
+        return geometries;
 
     }
 
@@ -218,8 +344,8 @@ export class KmlToGeojson {
 
         // Parse current node
         if (node_name === 'Placemark') {
-            const placemark = this.parsePlacemark(node, styles, style_maps, folder_id);
-            placemarks.push(placemark);
+            const _placemarks = this.parsePlacemark(node, styles, style_maps, folder_id);
+            placemarks.push(..._placemarks);
         }
         else if (node_name === 'Folder') {
             const folder = this.parseFolder(node, folder_id);
