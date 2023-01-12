@@ -365,6 +365,43 @@ export class KmlToGeojson {
 
     }
 
+    private readonly streamParseNode = async (
+        node: Element,
+        folder_id: string | null = null,
+        styles: any[],
+        style_maps: any[],
+        on_folder: (folder: KmlFolder) => any | void | Promise<any> | Promise<void>,
+        on_geometry: (geometry: KmlFeature<any>) => any | void | Promise<any> | Promise<void>,
+        level = 0
+    ) => {
+
+        const node_name = node.nodeName;
+
+        // Parse current node
+        if (node_name === 'Placemark') {
+            const _placemarks = this.parsePlacemark(node, styles, style_maps, folder_id);
+            for (const placemark of _placemarks) {
+                await on_geometry(placemark as KmlFeature<any>);
+            }
+        }
+        else if (node_name === 'Folder') {
+            const folder = this.parseFolder(node, folder_id);
+            await on_folder(folder);
+            folder_id = folder.folder_id;
+        }
+
+
+        // Loop through children
+        if (node.childNodes) {
+            for (let i = 0; i < node.childNodes.length; i++) {
+                const child_node = node.childNodes[i];
+                await this.streamParseNode(child_node as Element, folder_id, styles, style_maps, on_folder, on_geometry, level + 1);
+
+            }
+        }
+
+    }
+
     private readonly parseStyleNode = (node: Element) => {
         const icon_style_node = this.get1(node, 'IconStyle');
         const line_style_node = this.get1(node, 'LineStyle');
@@ -524,5 +561,18 @@ export class KmlToGeojson {
         }
 
         return { folders, geojson }
+    }
+
+    public readonly streamParse = async <T extends GeoJsonProperties = GeoJsonProperties>(
+        kml_content: string,
+        on_folder: (folder: KmlFolder) => any | void | Promise<any> | Promise<void>,
+        on_geometry: (geometry: KmlFeature<T>) => any | void | Promise<any> | Promise<void>) => {
+
+        const dom = new DOMParser().parseFromString(kml_content);
+        const kml_node = this.get1(dom as any as Element, 'kml')!;
+
+        const { styles, style_maps } = this.parseStyles(kml_node);
+
+        await this.streamParseNode(kml_node, null, styles, style_maps, on_folder, on_geometry);
     }
 }
