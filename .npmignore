@@ -4,3 +4,4 @@ src
 .github
 test-kmls
 src/test.spec.ts
+lib/test.spec.*
