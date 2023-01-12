@@ -47,6 +47,12 @@ export interface KmlGeojson<P = GeoJsonProperties> {
 
 export class KmlToGeojson {
 
+    private include_altitude: boolean;
+
+    constructor(altitude = true) {
+        this.include_altitude = altitude;
+    }
+
     private readonly get1 = (node: Element, tag_name: string): Element | null => {
         const nodes = node.getElementsByTagName(tag_name);
         return nodes.length ? nodes[0] : null;
@@ -78,7 +84,7 @@ export class KmlToGeojson {
         const geometry_type = point_node ? 'Point' : linestring_node ? 'LineString' : polygon_node ? 'Polygon' : null;
         if (geometry_type === null) throw new Error(`Placemark doesn't have Point, LineString, or Polygon child.`);
 
-        const getCoordinates = (node: Element, geometry_type: 'Point' | 'LineString' | 'Polygon'): [number, number] | [number, number][] => {
+        const getCoordinates = (node: Element, geometry_type: 'Point' | 'LineString' | 'Polygon') => {
             const coordinates_node = this.get1(node, 'coordinates')!;
             const text_content = coordinates_node.textContent!;
 
@@ -86,8 +92,12 @@ export class KmlToGeojson {
                 const split = text_content.split(',');
                 const longitude = parseFloat(split[0]);
                 const latitude = parseFloat(split[1]);
+                const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
 
-                return [longitude, latitude];
+                const arr = [longitude, latitude];
+                if (this.include_altitude) arr.push(altitude);
+
+                return arr;
             }
             else if (geometry_type === 'LineString' || geometry_type === 'Polygon') {
                 const splits = text_content.trim().split(' ');
@@ -96,12 +106,20 @@ export class KmlToGeojson {
                     const split = coordinate.trim().split(',');
                     const longitude = parseFloat(split[0]);
                     const latitude = parseFloat(split[1]);
+                    const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
 
-                    return [longitude, latitude];
-                }) as [number, number][];
+                    const arr = [longitude, latitude];
+                    if (this.include_altitude) arr.push(altitude);
+
+                    return arr
+                });
             }
 
-            return [0, 0]
+
+            const arr = [0, 0];
+            if (this.include_altitude) arr.push(0);
+
+            return arr;
         }
 
         const coordinates = getCoordinates((geometry_type === 'Point' ? point_node : geometry_type === 'LineString' ? linestring_node : polygon_node) as Element, geometry_type);
