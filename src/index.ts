@@ -136,6 +136,7 @@ export class KmlToGeojson {
             const geometry_type = 'Point';
 
             const coordinates = getCoordinates(point, geometry_type);
+            if (!this.geometryIsValid(coordinates)) continue;
 
             const properties: any = {
                 name: name_node?.textContent ?? '',
@@ -197,6 +198,7 @@ export class KmlToGeojson {
             const geometry_type = 'LineString';
 
             const coordinates = getCoordinates(linestring, geometry_type);
+            if (!this.geometryIsValid(coordinates)) continue;
 
             const properties: any = {
                 name: name_node?.textContent ?? '',
@@ -258,6 +260,7 @@ export class KmlToGeojson {
             const geometry_type = 'Polygon';
 
             const coordinates = getCoordinates(polygon, geometry_type);
+            if (!this.geometryIsValid(coordinates)) continue;
 
             const properties: any = {
                 name: name_node?.textContent ?? '',
@@ -328,6 +331,29 @@ export class KmlToGeojson {
             name: name_node?.textContent ?? 'Untitled folder',
             parent_folder_id
         }
+    }
+
+    private geometryIsValid(coordinates: number[] | number[][]) {
+        for (const item of coordinates) {
+            if (Array.isArray(item)) {
+                for (const item2 of item) {
+                    if (isNaN(item2)) {
+                        console.log('[kml-to-geojson] Geometry is invalid: ');
+                        console.log(JSON.stringify(coordinates));
+                        return false;
+                    }
+                }
+            }
+            else {
+                if (isNaN(item)) {
+                    console.log('[kml-to-geojson] Geometry is invalid: ');
+                    console.log(JSON.stringify(coordinates));
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     private readonly parseNode = (
