@@ -81,7 +81,7 @@ export class KmlToGeojson {
         return { color, opacity: isNaN(opacity) ? undefined : opacity };
     }
 
-    private readonly parsePlacemark = (node: Element, styles: any[], style_maps: any[], folder_id: string | null) => {
+    private readonly parsePlacemark = (node: Element, styles: any[], style_maps: any[], schemas: any[], folder_id: string | null) => {
         const name_node = this.get1(node, 'name');
         const description_node = this.get1(node, 'description');
         const style_url_node = this.get1(node, 'styleUrl');
@@ -132,17 +132,84 @@ export class KmlToGeojson {
             return arr;
         }
 
+        const getExtendedData = (node: Element) => {
+            const extended_data_node = this.get1(node, 'ExtendedData');
+            if (!extended_data_node) return {};
+
+            const schema_data_nodes = this.get(extended_data_node, 'SchemaData');
+            const data_nodes = this.get(extended_data_node, 'Data');
+
+            const extended_data_obj: Record<string, any> = {};
+
+            for (const schema_data_node of schema_data_nodes) {
+                const schema_url = schema_data_node.getAttribute('schemaUrl');
+                if (!schema_url || !schema_url.startsWith('#')) continue;
+                
+                const schema_id = schema_url.substring(1);
+
+                const schema = schemas.find(_ => _.id === schema_id);
+                if (!schema) continue;
+
+                const simple_data_nodes = this.get(schema_data_node, 'SimpleData');
+
+                for (const simple_data_node of simple_data_nodes) {
+                    const name = simple_data_node.getAttribute('name');
+                    const value = simple_data_node.textContent;
+                    if (!name || value === null) continue;
+
+                    const field_type = schema.fields[name];
+                    if (!field_type) continue;
+
+                    switch (field_type) {
+                        case "string":
+                            extended_data_obj[name] = value;
+                            break;
+                        
+                        case "int":
+                        case "uint":
+                        case "short":
+                        case "ushort":
+                            extended_data_obj[name] = parseInt(value);
+                            break;
+                        
+                        case "float":
+                        case "double":
+                            extended_data_obj[name] = parseFloat(value);
+                            break;
+                        
+                        case "bool":
+                            extended_data_obj[name] = value === 'true';
+                            break;
+                    }
+                }
+            }
+
+            for (const data_node of data_nodes) {
+                const name = data_node.getAttribute('name');
+                const value_node = this.get1(data_node, 'value');
+                const value = value_node?.textContent;
+                if (!name || !value) continue;
+
+                extended_data_obj[name] = value;
+            }
+
+            return extended_data_obj;
+        }
+
+        const extended_data = getExtendedData(node);
+
+        const properties: any = {
+          name: name_node?.textContent ?? "",
+          description: description_node?.textContent ?? "",
+          folder_id,
+          extended_data,
+        };
+
         for (const point of point_nodes) {
             const geometry_type = 'Point';
 
             const coordinates = getCoordinates(point, geometry_type);
-            if (!this.geometryIsValid(coordinates)) continue;
-
-            const properties: any = {
-                name: name_node?.textContent ?? '',
-                description: description_node?.textContent ?? '',
-                folder_id
-            };
+            if (!this.geometryIsValid(coordinates)) continue;            
 
             if (style_id) {
                 const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
@@ -200,12 +267,6 @@ export class KmlToGeojson {
             const coordinates = getCoordinates(linestring, geometry_type);
             if (!this.geometryIsValid(coordinates)) continue;
 
-            const properties: any = {
-                name: name_node?.textContent ?? '',
-                description: description_node?.textContent ?? '',
-                folder_id
-            };
-
             if (style_id) {
                 const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
                 const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
@@ -261,12 +322,6 @@ export class KmlToGeojson {
 
             const coordinates = getCoordinates(polygon, geometry_type);
             if (!this.geometryIsValid(coordinates)) continue;
-
-            const properties: any = {
-                name: name_node?.textContent ?? '',
-                description: description_node?.textContent ?? '',
-                folder_id
-            };
 
             if (style_id) {
                 const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
@@ -361,6 +416,7 @@ export class KmlToGeojson {
         folder_id: string | null = null,
         styles: any[],
         style_maps: any[],
+        schemas: any[],
         folders: any[] = [],
         placemarks: any[] = [],
         level = 0
@@ -370,7 +426,7 @@ export class KmlToGeojson {
 
         // Parse current node
         if (node_name === 'Placemark') {
-            const _placemarks = this.parsePlacemark(node, styles, style_maps, folder_id);
+            const _placemarks = this.parsePlacemark(node, styles, style_maps, schemas, folder_id);
             placemarks.push(..._placemarks);
         }
         else if (node_name === 'Folder') {
@@ -384,7 +440,7 @@ export class KmlToGeojson {
         if (node.childNodes) {
             for (let i = 0; i < node.childNodes.length; i++) {
                 const child_node = node.childNodes[i];
-                this.parseNode(child_node as Element, folder_id, styles, style_maps, folders, placemarks, level + 1);
+                this.parseNode(child_node as Element, folder_id, styles, style_maps, schemas, folders, placemarks, level + 1);
 
             }
         }
@@ -396,6 +452,7 @@ export class KmlToGeojson {
         folder_id: string | null = null,
         styles: any[],
         style_maps: any[],
+        schemas: any[],
         on_folder: (folder: KmlFolder) => (any | void | Promise<any> | Promise<void>),
         on_geometry: (geometry: KmlFeature<any>) => (any | void | Promise<any> | Promise<void>),
         level = 0
@@ -405,7 +462,7 @@ export class KmlToGeojson {
 
         // Parse current node
         if (node_name === 'Placemark') {
-            const _placemarks = this.parsePlacemark(node, styles, style_maps, folder_id);
+            const _placemarks = this.parsePlacemark(node, styles, style_maps, schemas, folder_id);
             for (const placemark of _placemarks) {
                 await on_geometry(placemark as KmlFeature<any>);
             }
@@ -421,7 +478,7 @@ export class KmlToGeojson {
         if (node.childNodes) {
             for (let i = 0; i < node.childNodes.length; i++) {
                 const child_node = node.childNodes[i];
-                await this.streamParseNode(child_node as Element, folder_id, styles, style_maps, on_folder, on_geometry, level + 1);
+                await this.streamParseNode(child_node as Element, folder_id, styles, style_maps, schemas, on_folder, on_geometry, level + 1);
 
             }
         }
@@ -567,6 +624,45 @@ export class KmlToGeojson {
 
     }
 
+    private readonly parseSchemaNode = (node: Element) => {
+        
+        const id = node.getAttribute('id');
+        
+        const schema_obj: any = {
+            id,
+            fields: {}
+        };
+
+        const simple_fields = node.getElementsByTagName('SimpleField');
+
+        for (let i = 0; i < simple_fields.length; i++) {
+            const simple_field = simple_fields[i];
+            const name = simple_field.getAttribute('name');
+            const type = simple_field.getAttribute('type');
+            if (name !== null && type !== null) {
+                schema_obj.fields[name] = type;
+            }
+        }
+
+        return schema_obj;
+    }
+
+    private readonly parseSchemas = (node: Element) => {
+        
+        const schema_nodes = node.getElementsByTagName('Schema');
+        
+        const schemas = [];
+
+        for (let i = 0; i < schema_nodes.length; i++) {
+            const schema_node = schema_nodes[i];
+            if (schema_node.hasAttribute('id')) {
+                schemas.push(this.parseSchemaNode(schema_node));
+            }
+        }
+
+        return schemas;
+    }
+
     public readonly parse = <T extends GeoJsonProperties = GeoJsonProperties>(kml_content: string): {
         folders: KmlFolder[],
         geojson: KmlGeojson
@@ -579,7 +675,9 @@ export class KmlToGeojson {
 
         const { styles, style_maps } = this.parseStyles(kml_node);
 
-        this.parseNode(kml_node, null, styles, style_maps, folders, placemarks);
+        const schemas = this.parseSchemas(kml_node);
+
+        this.parseNode(kml_node, null, styles, style_maps, schemas, folders, placemarks);
 
         const geojson: KmlGeojson<T> = {
             type: 'FeatureCollection',
@@ -599,6 +697,8 @@ export class KmlToGeojson {
 
         const { styles, style_maps } = this.parseStyles(kml_node);
 
-        await this.streamParseNode(kml_node, null, styles, style_maps, on_folder, on_geometry);
+        const schemas = this.parseSchemas(kml_node);
+
+        await this.streamParseNode(kml_node, null, styles, style_maps, schemas, on_folder, on_geometry);
     }
 }
