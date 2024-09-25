@@ -1,4 +1,4 @@
-import { Feature, GeoJsonProperties, Point, LineString, Polygon } from 'geojson';
+import { Feature, GeoJsonProperties, Point, LineString, Polygon, Geometry, GeometryCollection } from 'geojson';
 import { DOMParser } from 'xmldom';
 const crypto = require('crypto');
 
@@ -53,15 +53,24 @@ export class KmlToGeojson {
         this.include_altitude = altitude;
     }
 
-    private readonly get1 = (node: Element, tag_name: string): Element | null => {
+    private readonly get1 = (node: Element, tag_name: string, direct_child=false): Element | null => {
         const nodes = node.getElementsByTagName(tag_name);
+        if (direct_child) {
+            for (let i = 0; i < nodes.length; i++) {
+                if (nodes[i].parentNode === node) {
+                    return nodes[i];
+                }
+            }
+            return null;
+        }
         return nodes.length ? nodes[0] : null;
     }
 
-    private readonly get = (node: Element, tag_name: string): Element[] => {
+    private readonly get = (node: Element, tag_name: string, direct_child=false): Element[] => {
         const elements = [];
         const res = node.getElementsByTagName(tag_name);
         for (let i = 0; i < res.length; i++) {
+            if (direct_child && res[i].parentNode !== node) continue;
             elements.push(res[i]);
         }
         return elements;
@@ -81,6 +90,80 @@ export class KmlToGeojson {
         return { color, opacity: isNaN(opacity) ? undefined : opacity };
     }
 
+    private readonly parseCoordinate = (node: Element | string): number[] | null => {
+        const coordinate_text = typeof node === 'string' ? node : node.textContent;
+        if (!coordinate_text) return null;
+
+        const split = coordinate_text.trim().split(',');
+        const longitude = parseFloat(split[0]);
+        const latitude = parseFloat(split[1]);
+        const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
+
+        const arr = [longitude, latitude];
+        if (this.include_altitude) arr.push(altitude);
+
+        return arr;
+    }
+
+    private readonly parseCoordinates = (node: Element | string): number[][] | null => {
+        const coordinates_text = typeof node === 'string' ? node : node.textContent;
+        if (!coordinates_text) return null;
+
+        const split = coordinates_text.trim().split(' ');
+
+        const coordinates = [];
+        for (const item of split) {
+            const coord = this.parseCoordinate(item);
+            if (coord) coordinates.push(coord);
+        }
+
+        return coordinates;
+    }
+
+    private readonly parseGeometry = (node: Element, styles: any[], style_maps: any[], folder_id: string | null): Geometry | null => {
+        const type_map: Record<string, 'Point' | 'LineString' | 'Polygon' | 'GeometryCollection'> = {
+            'Point': 'Point',
+            'LineString': 'LineString',
+            'Polygon': 'Polygon',
+            'MultiGeometry': 'GeometryCollection'
+        }
+
+        const geometry_type = type_map[node.nodeName];
+        if (!geometry_type) return null;
+
+        if (geometry_type === 'GeometryCollection') {
+            const geometry_nodes = this.get(node, 'Point', true)
+                .concat(this.get(node, 'LineString', true))
+                .concat(this.get(node, 'Polygon', true));
+            
+            const geometries: Geometry[] = [];
+            
+            for (const geometry_node of geometry_nodes) {
+                const geometry = this.parseGeometry(geometry_node, styles, style_maps, folder_id);
+                if (!geometry) continue;
+                geometries.push(geometry);
+            }
+
+            return {
+                type: 'GeometryCollection',
+                geometries
+            };
+        } else {
+            const coordinates_node = this.get1(node, 'coordinates');
+            if (!coordinates_node) return null;
+
+            const multiple_coords = geometry_type === 'LineString' || geometry_type === 'Polygon';
+
+            const coordinates = multiple_coords ? this.parseCoordinates(coordinates_node) : this.parseCoordinate(coordinates_node);
+            if (!coordinates) return null;
+
+            return {
+                type: geometry_type,
+                coordinates
+            } as Point | LineString | Polygon;
+        }
+    }
+
     private readonly parsePlacemark = (node: Element, styles: any[], style_maps: any[], folder_id: string | null) => {
         const name_node = this.get1(node, 'name');
         const description_node = this.get1(node, 'description');
@@ -88,238 +171,75 @@ export class KmlToGeojson {
         const style_id = style_url_node?.textContent;
 
 
-        const point_nodes = this.get(node, 'Point');
-        const linestring_nodes = this.get(node, 'LineString');
-        const polygon_nodes = this.get(node, 'Polygon');
+        const point_node = this.get1(node, 'Point', true);
+        const linestring_node = this.get1(node, 'LineString', true);
+        const polygon_node = this.get1(node, 'Polygon', true);
+        const multi_geometry_node = this.get1(node, 'MultiGeometry', true);
 
-        const geometries = [];
+        const geometry_node = point_node || linestring_node || polygon_node || multi_geometry_node;
+        if (!geometry_node) return null;
 
-        const getCoordinates = (node: Element, geometry_type: 'Point' | 'LineString' | 'Polygon') => {
-            const coordinates_node = this.get1(node, 'coordinates')!;
-            const text_content = coordinates_node.textContent!;
+        const geometry_node_type = geometry_node.nodeName;
 
-            if (geometry_type === 'Point') {
-                const split = text_content.split(',');
-                const longitude = parseFloat(split[0]);
-                const latitude = parseFloat(split[1]);
-                const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
+        const geometry = this.parseGeometry(geometry_node, styles, style_maps, folder_id);
 
-                const arr = [longitude, latitude];
-                if (this.include_altitude) arr.push(altitude);
+        const properties: any = {
+            name: name_node?.textContent ?? '',
+            description: description_node?.textContent ?? '',
+            folder_id
+        };
 
-                return arr;
-            }
-            else if (geometry_type === 'LineString' || geometry_type === 'Polygon') {
-                const splits = text_content.trim().split(' ');
+        if (geometry_node_type !== 'MultiGeometry' && style_id) {
+            const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
+            const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
+            if (style_map) {
 
-                return splits.map(coordinate => {
-                    const split = coordinate.trim().split(',');
-                    const longitude = parseFloat(split[0]);
-                    const latitude = parseFloat(split[1]);
-                    const altitude = split.length > 2 ? parseFloat(split[2]) : 0;
+                const normal_style = styles.find(_ => _.style_id === style_map.normal);
+                const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
 
-                    const arr = [longitude, latitude];
-                    if (this.include_altitude) arr.push(altitude);
-
-                    return arr
-                });
-            }
-
-
-            const arr = [0, 0];
-            if (this.include_altitude) arr.push(0);
-
-            return arr;
-        }
-
-        for (const point of point_nodes) {
-            const geometry_type = 'Point';
-
-            const coordinates = getCoordinates(point, geometry_type);
-            if (!this.geometryIsValid(coordinates)) continue;
-
-            const properties: any = {
-                name: name_node?.textContent ?? '',
-                description: description_node?.textContent ?? '',
-                folder_id
-            };
-
-            if (style_id) {
-                const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
-                const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
-                if (style_map) {
-
-                    const normal_style = styles.find(_ => _.style_id === style_map.normal);
-                    const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
-
-                    if (normal_style) {
-                        Object.keys(normal_style).forEach(key => {
-                            if (key === 'style_id') return;
-                            const value = normal_style[key];
-                            properties[key] = value;
-                        })
-                    }
-                    if (highlight_style) {
-                        Object.keys(highlight_style).forEach(key => {
-                            if (key === 'style_id') return;
-                            const value = highlight_style[key];
-                            if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
-                        })
-                    }
-
-                }
-                else if (style) {
-                    Object.keys(style).forEach(key => {
+                if (normal_style) {
+                    Object.keys(normal_style).forEach(key => {
                         if (key === 'style_id') return;
-                        const value = style[key];
+                        const value = normal_style[key];
                         properties[key] = value;
                     })
                 }
-
-                Object.keys(properties).forEach(key => {
-                    if (key.startsWith('line-') || key.startsWith('highlight-line-') || key.startsWith('fill-') || key.startsWith('highlight-fill-')) {
-                        delete properties[key];
-                    }
-                })
-            }
-
-            geometries.push({
-                type: 'Feature',
-                id: crypto.randomUUID(),
-                geometry: {
-                    type: geometry_type,
-                    coordinates
-                },
-                properties
-            });
-        }
-
-        for (const linestring of linestring_nodes) {
-            const geometry_type = 'LineString';
-
-            const coordinates = getCoordinates(linestring, geometry_type);
-            if (!this.geometryIsValid(coordinates)) continue;
-
-            const properties: any = {
-                name: name_node?.textContent ?? '',
-                description: description_node?.textContent ?? '',
-                folder_id
-            };
-
-            if (style_id) {
-                const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
-                const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
-                if (style_map) {
-
-                    const normal_style = styles.find(_ => _.style_id === style_map.normal);
-                    const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
-
-                    if (normal_style) {
-                        Object.keys(normal_style).forEach(key => {
-                            if (key === 'style_id') return;
-                            const value = normal_style[key];
-                            properties[key] = value;
-                        })
-                    }
-                    if (highlight_style) {
-                        Object.keys(highlight_style).forEach(key => {
-                            if (key === 'style_id') return;
-                            const value = highlight_style[key];
-                            if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
-                        })
-                    }
-
-                }
-                else if (style) {
-                    Object.keys(style).forEach(key => {
+                if (highlight_style) {
+                    Object.keys(highlight_style).forEach(key => {
                         if (key === 'style_id') return;
-                        const value = style[key];
-                        properties[key] = value;
+                        const value = highlight_style[key];
+                        if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
                     })
                 }
 
-                Object.keys(properties).forEach(key => {
-                    if (key.startsWith('icon-') || key.startsWith('highlight-icon-') || key.startsWith('fill-') || key.startsWith('highlight-fill-')) {
-                        delete properties[key];
-                    }
+            }
+            else if (style) {
+                Object.keys(style).forEach(key => {
+                    if (key === 'style_id') return;
+                    const value = style[key];
+                    properties[key] = value;
                 })
             }
 
-            geometries.push({
-                type: 'Feature',
-                id: crypto.randomUUID(),
-                geometry: {
-                    type: geometry_type,
-                    coordinates
-                },
-                properties
-            });
+            Object.keys(properties).forEach(key => {
+                if (geometry_node_type !== 'Point' && (key.startsWith('icon-') || key.startsWith('highlight-icon-'))) {
+                    delete properties[key];
+                }
+                if (geometry_node_type !== 'LineString' && (key.startsWith('line-') || key.startsWith('highlight-line-'))) {
+                    delete properties[key];
+                }
+                if (geometry_node_type !== 'Polygon' && (key.startsWith('fill-') || key.startsWith('highlight-fill-'))) {
+                    delete properties[key];
+                }
+            })
         }
 
-        for (const polygon of polygon_nodes) {
-            const geometry_type = 'Polygon';
-
-            const coordinates = getCoordinates(polygon, geometry_type);
-            if (!this.geometryIsValid(coordinates)) continue;
-
-            const properties: any = {
-                name: name_node?.textContent ?? '',
-                description: description_node?.textContent ?? '',
-                folder_id
-            };
-
-            if (style_id) {
-                const style_map = style_maps.find(_ => _.id === style_id.replace('#', ''));
-                const style = styles.find(_ => _.style_id === style_id.replace('#', ''));
-                if (style_map) {
-
-                    const normal_style = styles.find(_ => _.style_id === style_map.normal);
-                    const highlight_style = styles.find(_ => _.style_id === style_map.highlight);
-
-                    if (normal_style) {
-                        Object.keys(normal_style).forEach(key => {
-                            if (key === 'style_id') return;
-                            const value = normal_style[key];
-                            properties[key] = value;
-                        })
-                    }
-                    if (highlight_style) {
-                        Object.keys(highlight_style).forEach(key => {
-                            if (key === 'style_id') return;
-                            const value = highlight_style[key];
-                            if (!(normal_style && normal_style[key] === highlight_style[key])) properties['highlight-' + key] = value;
-                        })
-                    }
-
-                }
-                else if (style) {
-                    Object.keys(style).forEach(key => {
-                        if (key === 'style_id') return;
-                        const value = style[key];
-                        properties[key] = value;
-                    })
-                }
-
-                Object.keys(properties).forEach(key => {
-                    if (key.startsWith('icon-') || key.startsWith('highlight-icon-') || key.startsWith('line-') || key.startsWith('highlight-line-')) {
-                        delete properties[key];
-                    }
-                })
-            }
-
-            geometries.push({
-                type: 'Feature',
-                id: crypto.randomUUID(),
-                geometry: {
-                    type: geometry_type,
-                    coordinates
-                },
-                properties
-            });
-        }
-
-        return geometries;
-
+        return {
+            type: "Feature",
+            id: crypto.randomUUID(),
+            geometry,
+            properties,
+        };
     }
 
     private readonly parseFolder = (node: Element, parent_folder_id: string | null): KmlFolder => {
@@ -370,8 +290,10 @@ export class KmlToGeojson {
 
         // Parse current node
         if (node_name === 'Placemark') {
-            const _placemarks = this.parsePlacemark(node, styles, style_maps, folder_id);
-            placemarks.push(..._placemarks);
+            const placemark = this.parsePlacemark(node, styles, style_maps, folder_id);
+            if (placemark) {
+                placemarks.push(placemark);
+            }
         }
         else if (node_name === 'Folder') {
             const folder = this.parseFolder(node, folder_id);
@@ -405,10 +327,8 @@ export class KmlToGeojson {
 
         // Parse current node
         if (node_name === 'Placemark') {
-            const _placemarks = this.parsePlacemark(node, styles, style_maps, folder_id);
-            for (const placemark of _placemarks) {
-                await on_geometry(placemark as KmlFeature<any>);
-            }
+            const placemark = this.parsePlacemark(node, styles, style_maps, folder_id);
+            await on_geometry(placemark as KmlFeature<any>);
         }
         else if (node_name === 'Folder') {
             const folder = this.parseFolder(node, folder_id);
